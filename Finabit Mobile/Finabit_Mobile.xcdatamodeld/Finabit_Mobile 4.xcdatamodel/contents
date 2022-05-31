@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DepartmentInSqlite" representedClassName="DepartmentInSqlite" syncable="YES" codeGenerationType="class">
+        <attribute name="allowNegative" optional="YES" attributeType="String"/>
+        <attribute name="departmentID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="departmentName" optional="YES" attributeType="String"/>
+        <attribute name="downloadPartnersByDepartment" optional="YES" attributeType="String"/>
+        <attribute name="endCount" optional="YES" attributeType="String"/>
+        <attribute name="showRoutes" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="startCount" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ItemInSqLite" representedClassName="ItemInSqLite" syncable="YES" codeGenerationType="class">
+        <attribute name="barcode" optional="YES" attributeType="String"/>
+        <attribute name="coef_Quantity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="coefficient" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="customField6" optional="YES" attributeType="String"/>
+        <attribute name="departmentID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="discount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="gratis" optional="YES" attributeType="String"/>
+        <attribute name="iD" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="includeInTargetPlan" optional="YES" attributeType="String"/>
+        <attribute name="itemGroupID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="itemGroupName" optional="YES" attributeType="String"/>
+        <attribute name="itemID" optional="YES" attributeType="String"/>
+        <attribute name="itemName" optional="YES" attributeType="String"/>
+        <attribute name="minimalPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="minimumQuantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="notaKreditore" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="price" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="priceMenuID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="String"/>
+        <attribute name="rabat" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="unit1Default" optional="YES" attributeType="String"/>
+        <attribute name="unitID1" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="unitID2" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="unitName" optional="YES" attributeType="String"/>
+        <attribute name="unitName1" optional="YES" attributeType="String"/>
+        <attribute name="unitName2" optional="YES" attributeType="String"/>
+        <attribute name="vATValue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="PartnerInSqLite" representedClassName="PartnerInSqLite" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="businessNo" optional="YES" attributeType="String"/>
+        <attribute name="day" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="defaultPartner" optional="YES" attributeType="String"/>
+        <attribute name="discountLevel" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="discountPercent" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="discountPercent2" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dueDays" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dueValue" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dueValueMaximum" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="fiscalNo" optional="YES" attributeType="String"/>
+        <attribute name="itemID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="merchDescription" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="merchSecondaryPlacement" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="minimumValueForDiscount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ownerName" optional="YES" attributeType="String"/>
+        <attribute name="partnerBarcode" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="partnerID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="partnerName" optional="YES" attributeType="String"/>
+        <attribute name="partnerRegion" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="partnerTypeID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="placeName" optional="YES" attributeType="String"/>
+        <attribute name="pricemenuID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="routeOrderID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="vatNo" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="UserInSqLite" representedClassName="UserInSqLite" syncable="YES" codeGenerationType="class">
+        <attribute name="allow_Dalja_NAV" optional="YES" attributeType="String"/>
+        <attribute name="allow_Pranimi_NAV" optional="YES" attributeType="String"/>
+        <attribute name="allowAssets" optional="YES" attributeType="String"/>
+        <attribute name="allowEditNotaKreditore" optional="YES" attributeType="String"/>
+        <attribute name="allowEditPriceOrder" optional="YES" attributeType="String"/>
+        <attribute name="allowEditRabat" optional="YES" attributeType="String"/>
+        <attribute name="allowEditRabatOrder" optional="YES" attributeType="String"/>
+        <attribute name="allowFarmersQuantityEdit" optional="YES" attributeType="String"/>
+        <attribute name="allowIn" optional="YES" attributeType="String"/>
+        <attribute name="allowInternNew" optional="YES" attributeType="String"/>
+        <attribute name="allowMerchendeiser" optional="YES" attributeType="String"/>
+        <attribute name="allowOrder" optional="YES" attributeType="String"/>
+        <attribute name="allowOut" optional="YES" attributeType="String"/>
+        <attribute name="allowSales" optional="YES" attributeType="String"/>
+        <attribute name="allowService" optional="YES" attributeType="String"/>
+        <attribute name="deleteTran" optional="YES" attributeType="String"/>
+        <attribute name="departmentID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="editTran" optional="YES" attributeType="String"/>
+        <attribute name="employeeID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="employeeName" optional="YES" attributeType="String"/>
+        <attribute name="kufizimiMeCmimbaze" optional="YES" attributeType="String"/>
+        <attribute name="lejoFletehyrjen" optional="YES" attributeType="String"/>
+        <attribute name="lejoLevizjenInterne" optional="YES" attributeType="String"/>
+        <attribute name="navPassword" optional="YES" attributeType="String"/>
+        <attribute name="navUserName" optional="YES" attributeType="String"/>
+        <attribute name="options" optional="YES" attributeType="String"/>
+        <attribute name="paraqitBorxhinEKons" optional="YES" attributeType="String"/>
+        <attribute name="pDAPIN" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="showScales" optional="YES" attributeType="String"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="VisitInSqLite" representedClassName="VisitInSqLite" syncable="YES" codeGenerationType="class">
+        <attribute name="beginningDate" optional="YES" attributeType="String"/>
+        <attribute name="endingDate" optional="YES" attributeType="String"/>
+        <attribute name="hasErrorSync" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="insBy" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isSynchronized" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="latitudeBegin" optional="YES" attributeType="String"/>
+        <attribute name="latitudeEnd" optional="YES" attributeType="String"/>
+        <attribute name="longitudeBegin" optional="YES" attributeType="String"/>
+        <attribute name="longitudeEnd" optional="YES" attributeType="String"/>
+        <attribute name="memoID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="partnerID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="partnerPicture" optional="YES" attributeType="Binary"/>
+        <attribute name="setPartnerPicture" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="setPartnerPosition" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="syncID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="updatePartnerCoords" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="visitId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="DepartmentInSqlite" positionX="9" positionY="216" width="128" height="134"/>
+        <element name="ItemInSqLite" positionX="0" positionY="180" width="128" height="434"/>
+        <element name="PartnerInSqLite" positionX="-9" positionY="171" width="128" height="434"/>
+        <element name="UserInSqLite" positionX="-36" positionY="9" width="128" height="494"/>
+        <element name="VisitInSqLite" positionX="0" positionY="180" width="128" height="284"/>
+    </elements>
+</model>

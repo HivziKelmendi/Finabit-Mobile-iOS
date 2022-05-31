@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5E60D7BF28316E6C00286693 /* UploadNewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E60D7BE28316E6C00286693 /* UploadNewOrder.swift */; };
+		5E6F5FE327F0553B00F6FD89 /* NewOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F5FE227F0553B00F6FD89 /* NewOrderVC.swift */; };
+		5E6F5FE527F06A1E00F6FD89 /* OrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F5FE427F06A1E00F6FD89 /* OrdersVC.swift */; };
+		5E6F5FEA27F4954600F6FD89 /* DepartmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F5FE927F4954600F6FD89 /* DepartmentVC.swift */; };
+		5E6F5FEC27F496BE00F6FD89 /* DepartmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F5FEB27F496BE00F6FD89 /* DepartmentCell.swift */; };
+		5E6F5FF727F7901000F6FD89 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F5FF627F7901000F6FD89 /* TransactionCell.swift */; };
+		5E715306284550BE00E5F949 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E715305284550BE00E5F949 /* Constants.swift */; };
+		5E89E67127B9575000599C18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E89E67027B9575000599C18 /* AppDelegate.swift */; };
+		5E89E67327B9575000599C18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E89E67227B9575000599C18 /* SceneDelegate.swift */; };
+		5E89E67527B9575000599C18 /* EntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E89E67427B9575000599C18 /* EntryVC.swift */; };
+		5E89E67827B9575000599C18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E89E67627B9575000599C18 /* Main.storyboard */; };
+		5E89E67B27B9575000599C18 /* Finabit_Mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E89E67927B9575000599C18 /* Finabit_Mobile.xcdatamodeld */; };
+		5E89E67D27B9575200599C18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E89E67C27B9575200599C18 /* Assets.xcassets */; };
+		5E89E68027B9575300599C18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E89E67E27B9575300599C18 /* LaunchScreen.storyboard */; };
+		5E89E68827B96C9900599C18 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E89E68727B96C9900599C18 /* RegisterVC.swift */; };
+		5E89E68A27B96CE800599C18 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E89E68927B96CE800599C18 /* LoginVC.swift */; };
+		5E89E69527BFC8B200599C18 /* XMLUserParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E89E69427BFC8B200599C18 /* XMLUserParser.swift */; };
+		5E89E69727C10F1300599C18 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E89E69627C10F1300599C18 /* PersistenceManager.swift */; };
+		5E89E69927C29D3800599C18 /* XMLDepartmenParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E89E69827C29D3800599C18 /* XMLDepartmenParser.swift */; };
+		5EBDE6BA27D1049200F45ED0 /* LocalSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBDE6B927D1049200F45ED0 /* LocalSettingsVC.swift */; };
+		5EBDE6BF27D52C2E00F45ED0 /* XMLItemParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBDE6BE27D52C2E00F45ED0 /* XMLItemParser.swift */; };
+		5ED62A8F27D8F155002CB8EC /* XMLPartnerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED62A8E27D8F155002CB8EC /* XMLPartnerParser.swift */; };
+		5ED62A9127DD17EA002CB8EC /* UDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED62A9027DD17EA002CB8EC /* UDM.swift */; };
+		5ED62A9C27E359D7002CB8EC /* ItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED62A9B27E359D7002CB8EC /* ItemVC.swift */; };
+		5ED62A9E27E35D76002CB8EC /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED62A9D27E35D76002CB8EC /* ItemCell.swift */; };
+		5ED62AA427EA1698002CB8EC /* ClientVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED62AA327EA1697002CB8EC /* ClientVC.swift */; };
+		5ED62AA627EA16D2002CB8EC /* ClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED62AA527EA16D2002CB8EC /* ClientCell.swift */; };
+		5ED62AA827EB970A002CB8EC /* VisitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED62AA727EB970A002CB8EC /* VisitVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5E60D7BE28316E6C00286693 /* UploadNewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadNewOrder.swift; sourceTree = "<group>"; };
+		5E6F5FE227F0553B00F6FD89 /* NewOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderVC.swift; sourceTree = "<group>"; };
+		5E6F5FE427F06A1E00F6FD89 /* OrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; };
+		5E6F5FE627F3A01200F6FD89 /* Finabit_Mobile 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 6.xcdatamodel"; sourceTree = "<group>"; };
+		5E6F5FE727F47F5100F6FD89 /* Finabit_Mobile 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 7.xcdatamodel"; sourceTree = "<group>"; };
+		5E6F5FE827F4805700F6FD89 /* Finabit_Mobile 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 8.xcdatamodel"; sourceTree = "<group>"; };
+		5E6F5FE927F4954600F6FD89 /* DepartmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentVC.swift; sourceTree = "<group>"; };
+		5E6F5FEB27F496BE00F6FD89 /* DepartmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentCell.swift; sourceTree = "<group>"; };
+		5E6F5FED27F5D2F800F6FD89 /* Finabit_Mobile 9.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 9.xcdatamodel"; sourceTree = "<group>"; };
+		5E6F5FEE27F5D6C200F6FD89 /* Finabit_Mobile 10.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 10.xcdatamodel"; sourceTree = "<group>"; };
+		5E6F5FEF27F5D85E00F6FD89 /* Finabit_Mobile 9.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 9.xcdatamodel"; sourceTree = "<group>"; };
+		5E6F5FF027F5DB9F00F6FD89 /* Finabit_Mobile 11.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 11.xcdatamodel"; sourceTree = "<group>"; };
+		5E6F5FF127F5DCF800F6FD89 /* Finabit_Mobile 12.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 12.xcdatamodel"; sourceTree = "<group>"; };
+		5E6F5FF227F5DD8600F6FD89 /* Finabit_Mobile 13.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 13.xcdatamodel"; sourceTree = "<group>"; };
+		5E6F5FF327F5E6EF00F6FD89 /* Finabit_Mobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Finabit_Mobile.xcdatamodel; sourceTree = "<group>"; };
+		5E6F5FF427F5EA8500F6FD89 /* Finabit_Mobile 9.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 9.xcdatamodel"; sourceTree = "<group>"; };
+		5E6F5FF527F5EB1100F6FD89 /* Finabit_Mobile 14.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 14.xcdatamodel"; sourceTree = "<group>"; };
+		5E6F5FF627F7901000F6FD89 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		5E715305284550BE00E5F949 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5E7A35F427FF4D04004DF569 /* Finabit_Mobile 15.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 15.xcdatamodel"; sourceTree = "<group>"; };
+		5E7A35F527FF99B8004DF569 /* Finabit_Mobile 16.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 16.xcdatamodel"; sourceTree = "<group>"; };
+		5E89E66D27B9575000599C18 /* Finabit Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Finabit Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E89E67027B9575000599C18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5E89E67227B9575000599C18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5E89E67427B9575000599C18 /* EntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryVC.swift; sourceTree = "<group>"; };
+		5E89E67727B9575000599C18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5E89E67A27B9575000599C18 /* Finabit_Mobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Finabit_Mobile.xcdatamodel; sourceTree = "<group>"; };
+		5E89E67C27B9575200599C18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5E89E67F27B9575300599C18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5E89E68127B9575300599C18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E89E68727B96C9900599C18 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		5E89E68927B96CE800599C18 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		5E89E69427BFC8B200599C18 /* XMLUserParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLUserParser.swift; sourceTree = "<group>"; };
+		5E89E69627C10F1300599C18 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		5E89E69827C29D3800599C18 /* XMLDepartmenParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLDepartmenParser.swift; sourceTree = "<group>"; };
+		5EBDE6B927D1049200F45ED0 /* LocalSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSettingsVC.swift; sourceTree = "<group>"; };
+		5EBDE6BE27D52C2E00F45ED0 /* XMLItemParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLItemParser.swift; sourceTree = "<group>"; };
+		5ED62A8E27D8F155002CB8EC /* XMLPartnerParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLPartnerParser.swift; sourceTree = "<group>"; };
+		5ED62A9027DD17EA002CB8EC /* UDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDM.swift; sourceTree = "<group>"; };
+		5ED62A9827E33812002CB8EC /* Finabit_Mobile 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 2.xcdatamodel"; sourceTree = "<group>"; };
+		5ED62A9B27E359D7002CB8EC /* ItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemVC.swift; sourceTree = "<group>"; };
+		5ED62A9D27E35D76002CB8EC /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		5ED62AA327EA1697002CB8EC /* ClientVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientVC.swift; sourceTree = "<group>"; };
+		5ED62AA527EA16D2002CB8EC /* ClientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCell.swift; sourceTree = "<group>"; };
+		5ED62AA727EB970A002CB8EC /* VisitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitVC.swift; sourceTree = "<group>"; };
+		5ED62AA927EE050C002CB8EC /* Finabit_Mobile 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 3.xcdatamodel"; sourceTree = "<group>"; };
+		5ED62AAA27EE6560002CB8EC /* Finabit_Mobile 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 4.xcdatamodel"; sourceTree = "<group>"; };
+		5ED62AAB27EE68E7002CB8EC /* Finabit_Mobile 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 5.xcdatamodel"; sourceTree = "<group>"; };
+		5ED62AAC27EE6BFB002CB8EC /* Finabit_Mobile 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 6.xcdatamodel"; sourceTree = "<group>"; };
+		5ED62AAD27EE82D1002CB8EC /* Finabit_Mobile 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 7.xcdatamodel"; sourceTree = "<group>"; };
+		5ED62AAE27EF00D4002CB8EC /* Finabit_Mobile 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 8.xcdatamodel"; sourceTree = "<group>"; };
+		5ED62AAF27EF0670002CB8EC /* Finabit_Mobile 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 3.xcdatamodel"; sourceTree = "<group>"; };
+		5ED62AB027EF088A002CB8EC /* Finabit_Mobile 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 4.xcdatamodel"; sourceTree = "<group>"; };
+		5ED62AB127EF3269002CB8EC /* Finabit_Mobile 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 5.xcdatamodel"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5E89E66A27B9575000599C18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5E89E66427B9575000599C18 = {
+			isa = PBXGroup;
+			children = (
+				5E89E66F27B9575000599C18 /* Finabit Mobile */,
+				5E89E66E27B9575000599C18 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5E89E66E27B9575000599C18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E89E66D27B9575000599C18 /* Finabit Mobile.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5E89E66F27B9575000599C18 /* Finabit Mobile */ = {
+			isa = PBXGroup;
+			children = (
+				5E89E67027B9575000599C18 /* AppDelegate.swift */,
+				5E89E67227B9575000599C18 /* SceneDelegate.swift */,
+				5EBDE6BD27D204A000F45ED0 /* Model */,
+				5EBDE6BB27D2044200F45ED0 /* View */,
+				5EBDE6BC27D2046800F45ED0 /* Controller */,
+				5E89E67C27B9575200599C18 /* Assets.xcassets */,
+				5E89E67E27B9575300599C18 /* LaunchScreen.storyboard */,
+				5E89E68127B9575300599C18 /* Info.plist */,
+				5E89E67927B9575000599C18 /* Finabit_Mobile.xcdatamodeld */,
+			);
+			path = "Finabit Mobile";
+			sourceTree = "<group>";
+		};
+		5EBDE6BB27D2044200F45ED0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E89E67627B9575000599C18 /* Main.storyboard */,
+				5ED62A9D27E35D76002CB8EC /* ItemCell.swift */,
+				5ED62AA527EA16D2002CB8EC /* ClientCell.swift */,
+				5E6F5FEB27F496BE00F6FD89 /* DepartmentCell.swift */,
+				5E6F5FF627F7901000F6FD89 /* TransactionCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5EBDE6BC27D2046800F45ED0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E89E67427B9575000599C18 /* EntryVC.swift */,
+				5E89E68727B96C9900599C18 /* RegisterVC.swift */,
+				5E89E68927B96CE800599C18 /* LoginVC.swift */,
+				5EBDE6B927D1049200F45ED0 /* LocalSettingsVC.swift */,
+				5ED62A9B27E359D7002CB8EC /* ItemVC.swift */,
+				5ED62AA327EA1697002CB8EC /* ClientVC.swift */,
+				5ED62AA727EB970A002CB8EC /* VisitVC.swift */,
+				5E6F5FE227F0553B00F6FD89 /* NewOrderVC.swift */,
+				5E6F5FE427F06A1E00F6FD89 /* OrdersVC.swift */,
+				5E6F5FE927F4954600F6FD89 /* DepartmentVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5EBDE6BD27D204A000F45ED0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E89E69427BFC8B200599C18 /* XMLUserParser.swift */,
+				5EBDE6BE27D52C2E00F45ED0 /* XMLItemParser.swift */,
+				5E89E69827C29D3800599C18 /* XMLDepartmenParser.swift */,
+				5E89E69627C10F1300599C18 /* PersistenceManager.swift */,
+				5ED62A8E27D8F155002CB8EC /* XMLPartnerParser.swift */,
+				5ED62A9027DD17EA002CB8EC /* UDM.swift */,
+				5E60D7BE28316E6C00286693 /* UploadNewOrder.swift */,
+				5E715305284550BE00E5F949 /* Constants.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5E89E66C27B9575000599C18 /* Finabit Mobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E89E68427B9575300599C18 /* Build configuration list for PBXNativeTarget "Finabit Mobile" */;
+			buildPhases = (
+				5E89E66927B9575000599C18 /* Sources */,
+				5E89E66A27B9575000599C18 /* Frameworks */,
+				5E89E66B27B9575000599C18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Finabit Mobile";
+			productName = "Finabit Mobile";
+			productReference = 5E89E66D27B9575000599C18 /* Finabit Mobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5E89E66527B9575000599C18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					5E89E66C27B9575000599C18 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = 5E89E66827B9575000599C18 /* Build configuration list for PBXProject "Finabit Mobile" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5E89E66427B9575000599C18;
+			productRefGroup = 5E89E66E27B9575000599C18 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5E89E66C27B9575000599C18 /* Finabit Mobile */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5E89E66B27B9575000599C18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E89E68027B9575300599C18 /* LaunchScreen.storyboard in Resources */,
+				5E89E67D27B9575200599C18 /* Assets.xcassets in Resources */,
+				5E89E67827B9575000599C18 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5E89E66927B9575000599C18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E715306284550BE00E5F949 /* Constants.swift in Sources */,
+				5E89E67527B9575000599C18 /* EntryVC.swift in Sources */,
+				5E6F5FE527F06A1E00F6FD89 /* OrdersVC.swift in Sources */,
+				5EBDE6BA27D1049200F45ED0 /* LocalSettingsVC.swift in Sources */,
+				5EBDE6BF27D52C2E00F45ED0 /* XMLItemParser.swift in Sources */,
+				5ED62A8F27D8F155002CB8EC /* XMLPartnerParser.swift in Sources */,
+				5E89E67127B9575000599C18 /* AppDelegate.swift in Sources */,
+				5ED62AA427EA1698002CB8EC /* ClientVC.swift in Sources */,
+				5ED62A9C27E359D7002CB8EC /* ItemVC.swift in Sources */,
+				5E60D7BF28316E6C00286693 /* UploadNewOrder.swift in Sources */,
+				5E89E68A27B96CE800599C18 /* LoginVC.swift in Sources */,
+				5E6F5FEC27F496BE00F6FD89 /* DepartmentCell.swift in Sources */,
+				5ED62AA827EB970A002CB8EC /* VisitVC.swift in Sources */,
+				5E6F5FF727F7901000F6FD89 /* TransactionCell.swift in Sources */,
+				5E89E69527BFC8B200599C18 /* XMLUserParser.swift in Sources */,
+				5E89E67327B9575000599C18 /* SceneDelegate.swift in Sources */,
+				5E89E67B27B9575000599C18 /* Finabit_Mobile.xcdatamodeld in Sources */,
+				5ED62A9127DD17EA002CB8EC /* UDM.swift in Sources */,
+				5E6F5FE327F0553B00F6FD89 /* NewOrderVC.swift in Sources */,
+				5E89E69727C10F1300599C18 /* PersistenceManager.swift in Sources */,
+				5E89E69927C29D3800599C18 /* XMLDepartmenParser.swift in Sources */,
+				5E6F5FEA27F4954600F6FD89 /* DepartmentVC.swift in Sources */,
+				5E89E68827B96C9900599C18 /* RegisterVC.swift in Sources */,
+				5ED62AA627EA16D2002CB8EC /* ClientCell.swift in Sources */,
+				5ED62A9E27E35D76002CB8EC /* ItemCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5E89E67627B9575000599C18 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E89E67727B9575000599C18 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5E89E67E27B9575300599C18 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E89E67F27B9575300599C18 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5E89E68227B9575300599C18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5E89E68327B9575300599C18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5E89E68527B9575300599C18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W8GUP4LR2M;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Finabit Mobile/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Terabit.Finabit-Mobile";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5E89E68627B9575300599C18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W8GUP4LR2M;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Finabit Mobile/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Terabit.Finabit-Mobile";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5E89E66827B9575000599C18 /* Build configuration list for PBXProject "Finabit Mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E89E68227B9575300599C18 /* Debug */,
+				5E89E68327B9575300599C18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E89E68427B9575300599C18 /* Build configuration list for PBXNativeTarget "Finabit Mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E89E68527B9575300599C18 /* Debug */,
+				5E89E68627B9575300599C18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5E89E67927B9575000599C18 /* Finabit_Mobile.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5E7A35F527FF99B8004DF569 /* Finabit_Mobile 16.xcdatamodel */,
+				5E7A35F427FF4D04004DF569 /* Finabit_Mobile 15.xcdatamodel */,
+				5E6F5FF527F5EB1100F6FD89 /* Finabit_Mobile 14.xcdatamodel */,
+				5E6F5FF427F5EA8500F6FD89 /* Finabit_Mobile 9.xcdatamodel */,
+				5E6F5FF327F5E6EF00F6FD89 /* Finabit_Mobile.xcdatamodel */,
+				5E6F5FF227F5DD8600F6FD89 /* Finabit_Mobile 13.xcdatamodel */,
+				5E6F5FF127F5DCF800F6FD89 /* Finabit_Mobile 12.xcdatamodel */,
+				5E6F5FF027F5DB9F00F6FD89 /* Finabit_Mobile 11.xcdatamodel */,
+				5E6F5FEF27F5D85E00F6FD89 /* Finabit_Mobile 9.xcdatamodel */,
+				5E6F5FEE27F5D6C200F6FD89 /* Finabit_Mobile 10.xcdatamodel */,
+				5E6F5FED27F5D2F800F6FD89 /* Finabit_Mobile 9.xcdatamodel */,
+				5E6F5FE827F4805700F6FD89 /* Finabit_Mobile 8.xcdatamodel */,
+				5E6F5FE727F47F5100F6FD89 /* Finabit_Mobile 7.xcdatamodel */,
+				5E6F5FE627F3A01200F6FD89 /* Finabit_Mobile 6.xcdatamodel */,
+				5ED62AB127EF3269002CB8EC /* Finabit_Mobile 5.xcdatamodel */,
+				5ED62AB027EF088A002CB8EC /* Finabit_Mobile 4.xcdatamodel */,
+				5ED62AAF27EF0670002CB8EC /* Finabit_Mobile 3.xcdatamodel */,
+				5ED62AAE27EF00D4002CB8EC /* Finabit_Mobile 8.xcdatamodel */,
+				5ED62AAD27EE82D1002CB8EC /* Finabit_Mobile 7.xcdatamodel */,
+				5ED62AAC27EE6BFB002CB8EC /* Finabit_Mobile 6.xcdatamodel */,
+				5ED62AAB27EE68E7002CB8EC /* Finabit_Mobile 5.xcdatamodel */,
+				5ED62AAA27EE6560002CB8EC /* Finabit_Mobile 4.xcdatamodel */,
+				5ED62AA927EE050C002CB8EC /* Finabit_Mobile 3.xcdatamodel */,
+				5ED62A9827E33812002CB8EC /* Finabit_Mobile 2.xcdatamodel */,
+				5E89E67A27B9575000599C18 /* Finabit_Mobile.xcdatamodel */,
+			);
+			currentVersion = 5E7A35F527FF99B8004DF569 /* Finabit_Mobile 16.xcdatamodel */;
+			path = Finabit_Mobile.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5E89E66527B9575000599C18 /* Project object */;
+}
