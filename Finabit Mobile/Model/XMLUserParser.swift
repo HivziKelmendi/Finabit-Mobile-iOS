@@ -300,11 +300,11 @@ class FeedUserParser: NSObject, XMLParserDelegate {
         default: break
         }
     }
-    
+    // test
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "XMLUsers" {
            
-            
+
             let user = User(UserID: Int(currentUserID), UserName: currentUserName, EmployeeID: Int(currentEmployeeID), EmployeeName: currentEmployeeName, DepartmentID: Int(currentDepartmentID), Options: currentOptions, EditTran: currentEditTran, DeleteTran: currentDeleteTran, PDAPIN: Int(currentPDAPIN), AllowSales: currentAllowSales, AllowOrder: currentAllowOrder, AllowIn: currentAllowIn, AllowOut: currentAllowOut, AllowMerchendeiser: currentAllowMerchendeiser, AllowService: currentAllowService, AllowAssets: currentAllowAssets, AllowEditRabat: currentAllowEditRabat, AllowEditNotaKreditore: currentAllowEditNotaKreditore, AllowEditRabatOrder: currentAllowEditRabatOrder, AllowEditPriceOrder: currentAllowEditPriceOrder, NavUserName: currentNavUserName, NavPassword: currentNavPassword, AllowInternNew: currentAllowInternNew, ParaqitBorxhinEKons: currentParaqitBorxhinEKons, KufizimiMeCmimbaze: currentKufizimiMeCmimbaze, LejoLevizjenInterne: currentLejoLevizjenInterne, LejoFletehyrjen: currentLejoFletehyrjen, AllowFarmersQuantityEdit: currentAllowFarmersQuantityEdit, ShowScales: currentShowScales, Allow_Pranimi_NAV: currentAllow_Pranimi_NAV, Allow_Dalja_NAV: currentAllow_Dalja_NAV)
             self.users.append(user)
         }
