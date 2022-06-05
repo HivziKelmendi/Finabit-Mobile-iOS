@@ -11,11 +11,36 @@ import CoreData
 class OrdersVC: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
+    @IBOutlet weak var tableView: UITableView!
+    private var transactions: [TransactionInSqLite] = []
+    
     override func viewDidLoad() {
+        tableView.dataSource = self
+        tableView.delegate =  self
         super.viewDidLoad()
         
     }
-  
+    
+    override func viewWillAppear(_ animated: Bool) {
+      
+        fetchItems()
+    }
+   
+    private func fetchItems() {
+        PersistenceManager.shared.fetchingTransactionsByDate { [self] result in
+            switch result {
+            case .success(let transactionsFromSqLite):                
+                self.transactions = transactionsFromSqLite
+                print(transactions.count)
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    
+
     
     @IBAction func newOrderPressed(_ sender: UIButton) {
         let request : NSFetchRequest<VisitInSqLite> = VisitInSqLite.fetchRequest()
@@ -35,4 +60,29 @@ class OrdersVC: UIViewController {
      }
    }
     
+}
+
+
+extension OrdersVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        transactions.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath)  as? OrderCell else {return UITableViewCell()}
+        
+        DispatchQueue.main.async
+        {
+            let transactions = self.transactions[indexPath.row]
+            cell.updateTransactionInVisits(from: transactions)
+        }
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var cellHeight:CGFloat = CGFloat()
+        cellHeight = 90
+        return cellHeight
+    }
 }

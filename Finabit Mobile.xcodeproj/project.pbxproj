@@ -14,6 +14,7 @@
 		5E6F5FEC27F496BE00F6FD89 /* DepartmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F5FEB27F496BE00F6FD89 /* DepartmentCell.swift */; };
 		5E6F5FF727F7901000F6FD89 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F5FF627F7901000F6FD89 /* TransactionCell.swift */; };
 		5E715306284550BE00E5F949 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E715305284550BE00E5F949 /* Constants.swift */; };
+		5E715308284B7EBA00E5F949 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E715307284B7EBA00E5F949 /* OrderCell.swift */; };
 		5E89E67127B9575000599C18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E89E67027B9575000599C18 /* AppDelegate.swift */; };
 		5E89E67327B9575000599C18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E89E67227B9575000599C18 /* SceneDelegate.swift */; };
 		5E89E67527B9575000599C18 /* EntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E89E67427B9575000599C18 /* EntryVC.swift */; };
@@ -57,6 +58,7 @@
 		5E6F5FF527F5EB1100F6FD89 /* Finabit_Mobile 14.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 14.xcdatamodel"; sourceTree = "<group>"; };
 		5E6F5FF627F7901000F6FD89 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		5E715305284550BE00E5F949 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5E715307284B7EBA00E5F949 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		5E7A35F427FF4D04004DF569 /* Finabit_Mobile 15.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 15.xcdatamodel"; sourceTree = "<group>"; };
 		5E7A35F527FF99B8004DF569 /* Finabit_Mobile 16.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 16.xcdatamodel"; sourceTree = "<group>"; };
 		5E89E66D27B9575000599C18 /* Finabit Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Finabit Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				5E89E67627B9575000599C18 /* Main.storyboard */,
+				5E715307284B7EBA00E5F949 /* OrderCell.swift */,
 				5ED62A9D27E35D76002CB8EC /* ItemCell.swift */,
 				5ED62AA527EA16D2002CB8EC /* ClientCell.swift */,
 				5E6F5FEB27F496BE00F6FD89 /* DepartmentCell.swift */,
@@ -258,6 +261,7 @@
 				5EBDE6BA27D1049200F45ED0 /* LocalSettingsVC.swift in Sources */,
 				5EBDE6BF27D52C2E00F45ED0 /* XMLItemParser.swift in Sources */,
 				5ED62A8F27D8F155002CB8EC /* XMLPartnerParser.swift in Sources */,
+				5E715308284B7EBA00E5F949 /* OrderCell.swift in Sources */,
 				5E89E67127B9575000599C18 /* AppDelegate.swift in Sources */,
 				5ED62AA427EA1698002CB8EC /* ClientVC.swift in Sources */,
 				5ED62A9C27E359D7002CB8EC /* ItemVC.swift in Sources */,

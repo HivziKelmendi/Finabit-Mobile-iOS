@@ -53,19 +53,8 @@ extension ItemVC: UITableViewDelegate, UITableViewDataSource {
        
             completionHandler!(item)
         dismiss(animated: true, completion: nil)
-      
-//        performSegue(withIdentifier: "ItemToNewOrderVC", sender: self)
     }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let destinationVC = segue.destination as! NewOrderVC
-//        if segue.identifier == "ItemToNewOrderVC" {
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                let item = items[indexPath.row]
-//                destinationVC.chosenItem = item
-//
-//            }
-//        }
-//    }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var cellHeight:CGFloat = CGFloat()

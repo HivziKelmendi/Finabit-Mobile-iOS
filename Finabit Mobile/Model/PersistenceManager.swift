@@ -519,6 +519,19 @@ struct PersistenceManager {
         }
     }
     
+    // MARK: - Fetching partner by id from Core Data
+    
+    func fetchingPartnerById(partnerData: Int,  completion: @escaping (Result<[PartnerInSqLite], Error>) -> Void) {
+        let request: NSFetchRequest<PartnerInSqLite> = PartnerInSqLite.fetchRequest()
+        request.predicate = NSPredicate(format: "partnerName ==%@", partnerData)
+        do {
+            let partner = try context.fetch(request)
+            completion(.success(partner))
+        } catch {
+            completion(.failure(DatabaseError.failedToFetchData))
+        }
+    }
+    
     // MARK: - Fetching Visits that aren't sincronised from Core Data
 
     public func fetchingVisitsForUpload( completion: @escaping (Result<[VisitInSqLite], Error>) -> Void) {
@@ -544,6 +557,21 @@ struct PersistenceManager {
             completion(.failure(DatabaseError.failedToFetchData))
         }
     }
+    
+    // MARK: - Fetching Traansactions by date
+
+    public func fetchingTransactionsByDate( completion: @escaping (Result<[TransactionInSqLite], Error>) -> Void) {
+     let request : NSFetchRequest<TransactionInSqLite> = TransactionInSqLite.fetchRequest()
+        let currentDate = getDate()
+        request.predicate = NSPredicate(format: "transactionDate CONTAINS %@", currentDate )
+        do {
+         let transactionsToUpload = try context.fetch(request)
+            completion(.success(transactionsToUpload))
+        } catch {
+            completion(.failure(DatabaseError.failedToFetchData))
+        }
+    }
+    
     
     // MARK: - Fetching TraansactionDetails that aren't sincronised from Core Data
 
@@ -690,6 +718,14 @@ struct PersistenceManager {
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    func getDate() -> String {
+    let currentDateTime = Date()
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    let result = formatter.string(from: currentDateTime)
+        return result
     }
  }
 
