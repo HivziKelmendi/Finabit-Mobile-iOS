@@ -61,7 +61,6 @@ struct PersistenceManager {
             newUser.setValue(user.ShowScales, forKey: "showScales")
             newUser.setValue(user.Allow_Pranimi_NAV, forKey: "allow_Pranimi_NAV")
             newUser.setValue(user.Allow_Dalja_NAV, forKey: "allow_Dalja_NAV")
-            
             usersInSqLite.append(newUser)
         }
             
