@@ -10,10 +10,10 @@ import UIKit
 class LocalSettingsVC: UIViewController {
     
     @IBOutlet weak var departmentPicker: UIPickerView!
-   public var selectedDepartmentID: String = ""
-    public var defaultDepartment: String?
+    var selectedDepartmentID: String = ""
+     var defaultDepartment: String?
     
-    public var  dafaultDepartment: String?
+    var  dafaultDepartment: String?
     private var items: [Item]?
     private var partners: [Partner]?
 

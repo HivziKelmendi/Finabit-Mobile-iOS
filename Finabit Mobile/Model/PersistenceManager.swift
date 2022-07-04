@@ -18,7 +18,7 @@ struct PersistenceManager {
     }
     static let shared = PersistenceManager()
 
-  public let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+   let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
    
     
     // MARK: - Save and update users to Core Data
@@ -428,6 +428,7 @@ struct PersistenceManager {
         newTransaction.nrIFatBlerje = transaction.nrIFatBlerje
         newTransaction.internalDepartmentID = transaction.internalDepartmentID ?? 0
         newTransaction.verifyFiscal = transaction.verifyFiscal ?? 0
+        newTransaction.partnerName = transaction.partnerName ?? ""
         do {
             try context.save()
           
@@ -533,7 +534,7 @@ struct PersistenceManager {
     
     // MARK: - Fetching Visits that aren't sincronised from Core Data
 
-    public func fetchingVisitsForUpload( completion: @escaping (Result<[VisitInSqLite], Error>) -> Void) {
+     func fetchingVisitsForUpload( completion: @escaping (Result<[VisitInSqLite], Error>) -> Void) {
      let request : NSFetchRequest<VisitInSqLite> = VisitInSqLite.fetchRequest()
         request.predicate = NSPredicate(format: "isSynchronized == %@ AND endingDate != %@ ", "0", "nil")
         do {
@@ -546,7 +547,7 @@ struct PersistenceManager {
     
     // MARK: - Fetching Traansactions that aren't sincronised from Core Data
 
-    public func fetchingTransactionsForUpload( completion: @escaping (Result<[TransactionInSqLite], Error>) -> Void) {
+     func fetchingTransactionsForUpload( completion: @escaping (Result<[TransactionInSqLite], Error>) -> Void) {
      let request : NSFetchRequest<TransactionInSqLite> = TransactionInSqLite.fetchRequest()
         request.predicate = NSPredicate(format: "iSynchronized == %@", "0")
         do {
@@ -559,13 +560,15 @@ struct PersistenceManager {
     
     // MARK: - Fetching Traansactions by date
 
-    public func fetchingTransactionsByDate( completion: @escaping (Result<[TransactionInSqLite], Error>) -> Void) {
+     func fetchingTransactionsByDate( completion: @escaping (Result<[TransactionInSqLite], Error>) -> Void) {
      let request : NSFetchRequest<TransactionInSqLite> = TransactionInSqLite.fetchRequest()
         let currentDate = getDate()
         request.predicate = NSPredicate(format: "transactionDate CONTAINS %@", currentDate )
         do {
          let transactionsToUpload = try context.fetch(request)
+            
             completion(.success(transactionsToUpload))
+            
         } catch {
             completion(.failure(DatabaseError.failedToFetchData))
         }
@@ -574,7 +577,7 @@ struct PersistenceManager {
     
     // MARK: - Fetching TraansactionDetails that aren't sincronised from Core Data
 
-    public func fetchingTransactionsDetails( completion: @escaping (Result<[TransactionDetalisInSqLite], Error>) -> Void) {
+     func fetchingTransactionsDetails( completion: @escaping (Result<[TransactionDetalisInSqLite], Error>) -> Void) {
         
             let request: NSFetchRequest<TransactionDetalisInSqLite> = TransactionDetalisInSqLite.fetchRequest()
             
@@ -588,7 +591,7 @@ struct PersistenceManager {
   
     // MARK: - Fetching TraansactionDetails that aren't sincronised from Core Data
 
-    public func SynchronizeData() {
+     func SynchronizeData() {
         let request : NSFetchRequest<VisitInSqLite> = VisitInSqLite.fetchRequest()
         do {
            let visits =  try context.fetch(request)

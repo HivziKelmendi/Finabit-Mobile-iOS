@@ -12,35 +12,34 @@ class OrderCell: UITableViewCell {
     @IBOutlet weak var konsumatori: UILabel!
     @IBOutlet weak var data: UILabel!
     @IBOutlet weak var shuma: UILabel!
+    @IBOutlet weak var isSynchronizedImage: UIImageView!
+    let image1 = UIImage(systemName: "checkmark.square.fill")
+    let image2 = UIImage(systemName: "clear.fill")
     
-    var partnerName: String = ""
-    var partnerId: Int?
+    
+//    let imageView1 = UIImageView(image: image1)
+    var partnerName: String?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    private func fetchPartner() {
-        if let safePartnerId = partnerId {
-        PersistenceManager.shared.fetchingPartnerById(partnerData: safePartnerId) {[weak self] result in
-            switch result {
-            case .success(let partner):
-                self?.partnerName = partner[0].partnerName ?? ""
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-        }
-    }
 
     func updateTransactionInVisits(from newTransaction: TransactionInSqLite) {
-        konsumatori.text = String(newTransaction.partnerId)
+        
+        konsumatori.text = newTransaction.partnerName
+   
+        shuma.text = String(format: "%.1f", newTransaction.allValue)
         let date = newTransaction.transactionDate
-        
+        if newTransaction.iSynchronized == 1 {
+            isSynchronizedImage.image = image1
+        }
+        else {
+            isSynchronizedImage.image = image2
+            isSynchronizedImage.tintColor = .systemRed
+        }
         let newdate = dateFromWebtoApp(date!)
-        
         data.text = newdate
-//        konsumatori.text = partnerName
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

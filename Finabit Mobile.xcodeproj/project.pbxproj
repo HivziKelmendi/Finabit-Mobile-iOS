@@ -59,6 +59,7 @@
 		5E6F5FF627F7901000F6FD89 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		5E715305284550BE00E5F949 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5E715307284B7EBA00E5F949 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		5E7153092855EDCD00E5F949 /* Finabit_Mobile 17.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 17.xcdatamodel"; sourceTree = "<group>"; };
 		5E7A35F427FF4D04004DF569 /* Finabit_Mobile 15.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 15.xcdatamodel"; sourceTree = "<group>"; };
 		5E7A35F527FF99B8004DF569 /* Finabit_Mobile 16.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 16.xcdatamodel"; sourceTree = "<group>"; };
 		5E89E66D27B9575000599C18 /* Finabit Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Finabit Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -507,6 +508,7 @@
 		5E89E67927B9575000599C18 /* Finabit_Mobile.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				5E7153092855EDCD00E5F949 /* Finabit_Mobile 17.xcdatamodel */,
 				5E7A35F527FF99B8004DF569 /* Finabit_Mobile 16.xcdatamodel */,
 				5E7A35F427FF4D04004DF569 /* Finabit_Mobile 15.xcdatamodel */,
 				5E6F5FF527F5EB1100F6FD89 /* Finabit_Mobile 14.xcdatamodel */,
@@ -533,7 +535,7 @@
 				5ED62A9827E33812002CB8EC /* Finabit_Mobile 2.xcdatamodel */,
 				5E89E67A27B9575000599C18 /* Finabit_Mobile.xcdatamodel */,
 			);
-			currentVersion = 5E7A35F527FF99B8004DF569 /* Finabit_Mobile 16.xcdatamodel */;
+			currentVersion = 5E7153092855EDCD00E5F949 /* Finabit_Mobile 17.xcdatamodel */;
 			path = Finabit_Mobile.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

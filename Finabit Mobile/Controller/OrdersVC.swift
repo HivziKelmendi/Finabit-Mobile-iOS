@@ -11,18 +11,23 @@ import CoreData
 class OrdersVC: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
+    @IBOutlet weak var vleraETransLabel: UILabel!
+    @IBOutlet weak var numriITransLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     private var transactions: [TransactionInSqLite] = []
-    
+    private var vleraETransactionit: Double = 0.0
+    private var numriITransaksionit: Int?
     override func viewDidLoad() {
         tableView.dataSource = self
         tableView.delegate =  self
+       
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-      
+        numriITransaksionit = transactions.count
+        vleraETransLabel.text = String(format: "%.1f", vleraETransactionit)
+        numriITransLabel.text = String(numriITransaksionit ?? 0)
         fetchItems()
     }
    
@@ -31,8 +36,13 @@ class OrdersVC: UIViewController {
             switch result {
             case .success(let transactionsFromSqLite):                
                 self.transactions = transactionsFromSqLite
-                print(transactions.count)
                 self.tableView.reloadData()
+                vleraETransactionit = 0
+                for transaction in transactions {
+                    if transaction != nil {
+                        vleraETransactionit += transaction.allValue
+                    }
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -75,6 +85,7 @@ extension OrdersVC: UITableViewDelegate, UITableViewDataSource {
         {
             let transactions = self.transactions[indexPath.row]
             cell.updateTransactionInVisits(from: transactions)
+
         }
         return cell
     }

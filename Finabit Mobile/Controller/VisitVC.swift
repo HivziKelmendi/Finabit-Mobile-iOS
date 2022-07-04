@@ -19,7 +19,7 @@ class VisitVC: UIViewController {
     var startOfVisit = ""
     @IBOutlet weak var clientLabel: UIButton!
 
-   public var chosenClient: PartnerInSqLite?
+    var chosenClient: PartnerInSqLite?
     override func viewDidLoad() {
         super.viewDidLoad()
       startOfVisit = getDate()

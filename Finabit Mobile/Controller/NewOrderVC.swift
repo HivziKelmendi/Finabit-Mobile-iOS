@@ -28,6 +28,7 @@ class NewOrderVC: UIViewController {
     private var latitude: String?
     private var transactionId: Int32?
     
+    private var allValue: Double = 0.0
     private var shifra: String?
     private var emertimi: String?
     private var sasia: Double?
@@ -146,7 +147,7 @@ class NewOrderVC: UIViewController {
        
         let newRabat = (1 - (rabat ?? 0)/100)*(1 - (rabat2 ?? 0)/100)
         let value =  (cmim ?? 0)*(sasia ?? 0)*newRabat
-        
+        allValue += value
         let newTransactionDetails = TransactionDetails(id: transactionDetailsId, itemId: shifra, itemName: emertimi, quantity: sasia, price: cmim, value: value, transactionid: transactionId, rabat: rabat, rabat2: rabat2, priceMenuID: priceMenuId, barcode: barcode, unitId: unitId, coefficient: coefficient)
         transactionDetails.append(newTransactionDetails)
         transactionDetailsId += 1
@@ -165,7 +166,7 @@ class NewOrderVC: UIViewController {
 
          } catch {
          }
-         transaction = Transaction(iD: transactionId!, transactionNo: nil, invoiceNo: nil, transactionType: nil, transactionDate: transactionDate, partnerId: partnerId, visitId: visitId, departmentId: departmentId, insDate: transactionDate, insBY: nil, employeeId: nil, iSynchronized: 0, vATPrecentId: nil, dueDays: nil, paymentVaule: nil, allValue: nil, longitude: longitude, latitude: latitude, serviceTypeID: nil, assetId: nil, bl: nil, memo: nil, llogaria_NotaKreditore: nil, vlera_NotaKreditore: nil, isPrintFiscalInvoice: nil, IsPriceFromPartner: nil, nrIFatBlerje: nil, internalDepartmentID: internalDepartmentId, verifyFiscal: nil)
+         transaction = Transaction(iD: transactionId!, transactionNo: nil, invoiceNo: nil, transactionType: nil, transactionDate: transactionDate, partnerName: partnerName, partnerId: partnerId, visitId: visitId, departmentId: departmentId, insDate: transactionDate, insBY: nil, employeeId: nil, iSynchronized: 0, vATPrecentId: nil, dueDays: nil, paymentVaule: nil, allValue: nil, longitude: longitude, latitude: latitude, serviceTypeID: nil, assetId: nil, bl: nil, memo: nil, llogaria_NotaKreditore: nil, vlera_NotaKreditore: nil, isPrintFiscalInvoice: nil, IsPriceFromPartner: nil, nrIFatBlerje: nil, internalDepartmentID: internalDepartmentId, verifyFiscal: nil)
     }
         
     @IBAction func saveTransactionAndTransactionDetails(_ sender: UIBarButtonItem) {
@@ -176,6 +177,8 @@ class NewOrderVC: UIViewController {
         PersistenceManager.shared.addTransactionDetailsToCoreData(transactionDetails: transactionDetails)
           endingDateForVisit = getDateToCloseVisit()
         updateVisitInSqLite()
+        updateTransactionInSqLite()
+        
         
         let uploadOrder = UploadOrder()
         uploadOrder.getDataToupload()
@@ -203,6 +206,23 @@ class NewOrderVC: UIViewController {
             print(error.localizedDescription)
         }
     }
+    
+    func updateTransactionInSqLite() {
+        let request : NSFetchRequest<TransactionInSqLite> = TransactionInSqLite.fetchRequest()
+        do {
+            guard let lastTransaction =  try context.fetch(request).last else { return}
+            lastTransaction.setValue(allValue, forKey: "allValue")
+
+        } catch {
+     }
+        do {
+            try context.save()
+          
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+         
     
     func showActionsheet() {
         let actionsheet = UIAlertController(title: "", message: "Mbyll Viziten", preferredStyle: .actionSheet)
@@ -283,6 +303,7 @@ struct Transaction {
     var invoiceNo: String?
     var transactionType: Int32?
     var transactionDate: String?
+    var partnerName: String?
     var partnerId: Int32?
     var visitId: Int32?
     var departmentId: Int16?

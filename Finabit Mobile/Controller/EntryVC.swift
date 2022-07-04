@@ -21,6 +21,12 @@ class EntryVC: UIViewController {
         print( FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)) 
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
 
+    }
 }
 
