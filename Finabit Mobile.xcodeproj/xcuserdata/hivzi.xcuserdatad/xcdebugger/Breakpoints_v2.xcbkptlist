@@ -686,8 +686,8 @@
             filePath = "Finabit Mobile/Model/PersistenceManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "668"
-            endingLineNumber = "668"
+            startingLineNumber = "682"
+            endingLineNumber = "682"
             landmarkName = "DeleteItemInSqLite()"
             landmarkType = "7">
          </BreakpointContent>
@@ -734,8 +734,8 @@
             filePath = "Finabit Mobile/Model/PersistenceManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "670"
-            endingLineNumber = "670"
+            startingLineNumber = "684"
+            endingLineNumber = "684"
             landmarkName = "DeleteItemInSqLite()"
             landmarkType = "7">
          </BreakpointContent>
@@ -862,8 +862,8 @@
             filePath = "Finabit Mobile/Controller/VisitVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "vazhdoPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -878,8 +878,8 @@
             filePath = "Finabit Mobile/Controller/VisitVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "vazhdoPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -894,26 +894,10 @@
             filePath = "Finabit Mobile/Controller/VisitVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8B30CC99-9990-427F-9FEA-E36E88803B34"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Finabit Mobile/Controller/OrdersVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "newOrderPressed(_:)"
-            landmarkType = "7">
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "VisitVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1022,8 +1006,8 @@
             filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
             landmarkName = "textFieldDidEndEditing(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1038,8 +1022,8 @@
             filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1070,8 +1054,8 @@
             filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1080,6 +1064,22 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7C855172-DECE-42C1-8DAD-91AD8A910515"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5EB56877-3AB9-44D7-8514-90C8B7B39311"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1095,22 +1095,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5EB56877-3AB9-44D7-8514-90C8B7B39311"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "69039831-BD15-4100-A12A-F631BE26EE9A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1118,9 +1102,9 @@
             filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1134,8 +1118,8 @@
             filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "getDpartmentPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1150,8 +1134,8 @@
             filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1182,8 +1166,8 @@
             filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "createTransaction()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1198,8 +1182,8 @@
             filePath = "Finabit Mobile/Controller/VisitVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "vazhdoPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1214,9 +1198,9 @@
             filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "addItem(_:)"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "shtoPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1230,8 +1214,8 @@
             filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "shtoPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1246,9 +1230,9 @@
             filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "saveTransactionAndTransactionDetails(_:)"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "updateVisitInSqLite()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1262,8 +1246,8 @@
             filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
             landmarkName = "showActionsheet()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1278,8 +1262,8 @@
             filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "createTransaction()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1294,8 +1278,8 @@
             filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "createTransaction()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1310,8 +1294,8 @@
             filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "saveTransactionAndTransactionDetails(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1546,8 +1530,8 @@
             filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "saveTransactionAndTransactionDetails(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1706,8 +1690,8 @@
             filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "saveTransactionAndTransactionDetails(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2089,8 +2073,8 @@
             filePath = "Finabit Mobile/Controller/OrdersVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2107,7 +2091,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "567"
             endingLineNumber = "567"
-            landmarkName = "fetchingTransactionsByDate(completion:)"
+            landmarkName = "fetchingOrderTransactionsByDate(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2121,8 +2105,8 @@
             filePath = "Finabit Mobile/View/OrderCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "updateTransactionInVisits(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2137,9 +2121,9 @@
             filePath = "Finabit Mobile/Controller/NewOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "createTransaction()"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "saveTransactionAndTransactionDetails(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2155,7 +2139,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "568"
             endingLineNumber = "568"
-            landmarkName = "fetchingTransactionsByDate(completion:)"
+            landmarkName = "fetchingOrderTransactionsByDate(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2169,8 +2153,8 @@
             filePath = "Finabit Mobile/View/OrderCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "updateTransactionInVisits(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2185,8 +2169,8 @@
             filePath = "Finabit Mobile/View/OrderCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "updateTransactionInVisits(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2226,22 +2210,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6CFB06D5-FECB-47B8-A523-6DCEDC423454"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Finabit Mobile/Controller/OrdersVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "43359494-26A8-4A62-8998-1795707E993A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -2252,6 +2220,194 @@
             startingLineNumber = "37"
             endingLineNumber = "37"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "49523414-2C6D-4804-BA23-0B9D9C2A1792"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finabit Mobile/Controller/VisitVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "VisitVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "49523414-2C6D-4804-BA23-0B9D9C2A1792 - e898768b3583106c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Finabit_Mobile.VisitVC.transactionTypeInVisit.getter : Swift.Int"
+                  moduleName = "Finabit Mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hivzi/Desktop/IOS_Development/Finabit%20mobile/Finabit%20Mobile/Finabit%20Mobile/Controller/VisitVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "49523414-2C6D-4804-BA23-0B9D9C2A1792 - 8558578b4642b804"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Finabit_Mobile.VisitVC.transactionTypeInVisit.setter : Swift.Int"
+                  moduleName = "Finabit Mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hivzi/Desktop/IOS_Development/Finabit%20mobile/Finabit%20Mobile/Finabit%20Mobile/Controller/VisitVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "97">
+               </Location>
+               <Location
+                  uuid = "49523414-2C6D-4804-BA23-0B9D9C2A1792 - 6288904168fec706"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Finabit_Mobile.VisitVC.transactionTypeInVisit.modify : Swift.Int"
+                  moduleName = "Finabit Mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hivzi/Desktop/IOS_Development/Finabit%20mobile/Finabit%20Mobile/Finabit%20Mobile/Controller/VisitVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  uuid = "49523414-2C6D-4804-BA23-0B9D9C2A1792 - ce424e8aafa41f4b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Finabit_Mobile.VisitVC.transactionTypeInVisit.modify : Swift.Int with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Finabit Mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hivzi/Desktop/IOS_Development/Finabit%20mobile/Finabit%20Mobile/Finabit%20Mobile/Controller/VisitVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  uuid = "49523414-2C6D-4804-BA23-0B9D9C2A1792 - 2361011c35d581a2"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Finabit_Mobile.VisitVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Finabit_Mobile.VisitVC"
+                  moduleName = "Finabit Mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hivzi/Desktop/IOS_Development/Finabit%20mobile/Finabit%20Mobile/Finabit%20Mobile/Controller/VisitVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "1208">
+               </Location>
+               <Location
+                  uuid = "49523414-2C6D-4804-BA23-0B9D9C2A1792 - 4fdf72c90ad3f238"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Finabit_Mobile.VisitVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Finabit_Mobile.VisitVC&gt;"
+                  moduleName = "Finabit Mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hivzi/Desktop/IOS_Development/Finabit%20mobile/Finabit%20Mobile/Finabit%20Mobile/Controller/VisitVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "1153">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "791A59F1-2492-4DA3-B0FE-60F022275897"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finabit Mobile/Controller/OrdersVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "35D9F42B-E090-4AD9-A563-ABD104599347"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finabit Mobile/Controller/OrdersVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A723693C-940E-48A2-B313-DA1842419BBD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finabit Mobile/Controller/OrdersVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54AFC377-CB4E-4BB1-8455-B52B2906993E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finabit Mobile/Controller/VisitVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A024C37B-C864-4325-9824-C5FA8EC3AF3B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finabit Mobile/Controller/VisitVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

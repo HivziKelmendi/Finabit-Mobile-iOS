@@ -1,14 +1,13 @@
 //
 //  VisitVC.swift
 //  Finabit Mobile
-//
 //  Created by Hivzi on 23.3.22.
 //
 
 import UIKit
 import CoreData
 
-class VisitVC: UIViewController {
+class VisitVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var visit: Visit?
     private var partnerId: Int16?
@@ -18,11 +17,16 @@ class VisitVC: UIViewController {
     @IBOutlet weak var selectedClient: UILabel!
     var startOfVisit = ""
     @IBOutlet weak var clientLabel: UIButton!
-
+    var transactionTypeInVisit = 0
     var chosenClient: PartnerInSqLite?
+    let imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
       startOfVisit = getDate()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
     }
     
 //    override func viewWillAppear(_ animated: Bool) {
@@ -38,21 +42,31 @@ class VisitVC: UIViewController {
     
     @IBAction func choseClient(_ sender: UIButton) {
         
-       
             let vc = storyboard?.instantiateViewController(withIdentifier: "Client") as! ClientVC
             present(vc, animated: true)
             vc.modalPresentationStyle = .popover
-            
             vc.completionHandler = { client in
                 self.selectedClient.text = client.partnerName
                 self.partnerName = client.partnerName
                 self.partnerId = client.partnerID
                 self.dueVaule = client.dueValue
                 self.discontPercent = client.discountPercent
-                
         }
     }
     
+    @IBAction func merrFoto(_ sender: UIButton) {
+    
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.editedImage] as? UIImage {
+//            saveImage(with: image)
+            print(image.size)
+            imagePicker.dismiss(animated: true, completion: nil)
+        }
+    }
 
     @IBAction func vazhdoPressed(_ sender: UIButton) {
         guard let departmentId = UDM.shared.defaults.value(forKey: "defaultDepartment") as? String else { return  }
@@ -75,7 +89,9 @@ class VisitVC: UIViewController {
         } catch {
             
         }
-        print(visitId)
+        
+        
+        
          visit =  Visit(visitId: visitId, updatePartnerCoords: 0, syncID: 1, setPartnerPosition: 1, setPartnerPicture: 0, partnerPicture: nil, partnerID: partnerId, memoID: 0, longitudeEnd: nil, longitudeBegin: nil, latitudeEnd: nil, latitudeBegin: nil, isSynchronized: 0, insBy: 1, hasErrorSync: 1, endingDate: nil, beginningDate: startOfVisit, departmentId: Int(departmentId), partnerName: partnerName, dueValue: dueVaule, discontPercent: discontPercent)
         if let safeVisit = visit {
             PersistenceManager.shared.addVisitToCoreData(visit: safeVisit)
@@ -83,8 +99,17 @@ class VisitVC: UIViewController {
                   performSegue(withIdentifier: "VisitToNewOrder", sender: self)
            }
         }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         let destinationVC = segue.destination as? NewOrderVC
+         if segue.identifier == "VisitToNewOrder"  {
+             destinationVC?.transactionType = Int32(transactionTypeInVisit)
+         }
+        else  {
     }
-
+    
+    }
+}
 
 struct Visit {
     var visitId: Int

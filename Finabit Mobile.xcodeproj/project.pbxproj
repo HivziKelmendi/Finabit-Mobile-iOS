@@ -29,6 +29,8 @@
 		5E89E69927C29D3800599C18 /* XMLDepartmenParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E89E69827C29D3800599C18 /* XMLDepartmenParser.swift */; };
 		5EBDE6BA27D1049200F45ED0 /* LocalSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBDE6B927D1049200F45ED0 /* LocalSettingsVC.swift */; };
 		5EBDE6BF27D52C2E00F45ED0 /* XMLItemParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBDE6BE27D52C2E00F45ED0 /* XMLItemParser.swift */; };
+		5EC4EF67287722B400FF6E3D /* PurchasesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC4EF66287722B400FF6E3D /* PurchasesVC.swift */; };
+		5EC4EF69287E057200FF6E3D /* PurchaeseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC4EF68287E057200FF6E3D /* PurchaeseCell.swift */; };
 		5ED62A8F27D8F155002CB8EC /* XMLPartnerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED62A8E27D8F155002CB8EC /* XMLPartnerParser.swift */; };
 		5ED62A9127DD17EA002CB8EC /* UDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED62A9027DD17EA002CB8EC /* UDM.swift */; };
 		5ED62A9C27E359D7002CB8EC /* ItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED62A9B27E359D7002CB8EC /* ItemVC.swift */; };
@@ -78,6 +80,8 @@
 		5E89E69827C29D3800599C18 /* XMLDepartmenParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLDepartmenParser.swift; sourceTree = "<group>"; };
 		5EBDE6B927D1049200F45ED0 /* LocalSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSettingsVC.swift; sourceTree = "<group>"; };
 		5EBDE6BE27D52C2E00F45ED0 /* XMLItemParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLItemParser.swift; sourceTree = "<group>"; };
+		5EC4EF66287722B400FF6E3D /* PurchasesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesVC.swift; sourceTree = "<group>"; };
+		5EC4EF68287E057200FF6E3D /* PurchaeseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaeseCell.swift; sourceTree = "<group>"; };
 		5ED62A8E27D8F155002CB8EC /* XMLPartnerParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLPartnerParser.swift; sourceTree = "<group>"; };
 		5ED62A9027DD17EA002CB8EC /* UDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDM.swift; sourceTree = "<group>"; };
 		5ED62A9827E33812002CB8EC /* Finabit_Mobile 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Finabit_Mobile 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -144,10 +148,11 @@
 			isa = PBXGroup;
 			children = (
 				5E89E67627B9575000599C18 /* Main.storyboard */,
-				5E715307284B7EBA00E5F949 /* OrderCell.swift */,
 				5ED62A9D27E35D76002CB8EC /* ItemCell.swift */,
 				5ED62AA527EA16D2002CB8EC /* ClientCell.swift */,
 				5E6F5FEB27F496BE00F6FD89 /* DepartmentCell.swift */,
+				5E715307284B7EBA00E5F949 /* OrderCell.swift */,
+				5EC4EF68287E057200FF6E3D /* PurchaeseCell.swift */,
 				5E6F5FF627F7901000F6FD89 /* TransactionCell.swift */,
 			);
 			path = View;
@@ -162,10 +167,11 @@
 				5EBDE6B927D1049200F45ED0 /* LocalSettingsVC.swift */,
 				5ED62A9B27E359D7002CB8EC /* ItemVC.swift */,
 				5ED62AA327EA1697002CB8EC /* ClientVC.swift */,
-				5ED62AA727EB970A002CB8EC /* VisitVC.swift */,
-				5E6F5FE227F0553B00F6FD89 /* NewOrderVC.swift */,
-				5E6F5FE427F06A1E00F6FD89 /* OrdersVC.swift */,
 				5E6F5FE927F4954600F6FD89 /* DepartmentVC.swift */,
+				5ED62AA727EB970A002CB8EC /* VisitVC.swift */,
+				5E6F5FE427F06A1E00F6FD89 /* OrdersVC.swift */,
+				5EC4EF66287722B400FF6E3D /* PurchasesVC.swift */,
+				5E6F5FE227F0553B00F6FD89 /* NewOrderVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -268,11 +274,13 @@
 				5ED62A9C27E359D7002CB8EC /* ItemVC.swift in Sources */,
 				5E60D7BF28316E6C00286693 /* UploadNewOrder.swift in Sources */,
 				5E89E68A27B96CE800599C18 /* LoginVC.swift in Sources */,
+				5EC4EF67287722B400FF6E3D /* PurchasesVC.swift in Sources */,
 				5E6F5FEC27F496BE00F6FD89 /* DepartmentCell.swift in Sources */,
 				5ED62AA827EB970A002CB8EC /* VisitVC.swift in Sources */,
 				5E6F5FF727F7901000F6FD89 /* TransactionCell.swift in Sources */,
 				5E89E69527BFC8B200599C18 /* XMLUserParser.swift in Sources */,
 				5E89E67327B9575000599C18 /* SceneDelegate.swift in Sources */,
+				5EC4EF69287E057200FF6E3D /* PurchaeseCell.swift in Sources */,
 				5E89E67B27B9575000599C18 /* Finabit_Mobile.xcdatamodeld in Sources */,
 				5ED62A9127DD17EA002CB8EC /* UDM.swift in Sources */,
 				5E6F5FE327F0553B00F6FD89 /* NewOrderVC.swift in Sources */,

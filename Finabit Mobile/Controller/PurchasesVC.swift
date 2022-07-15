@@ -1,28 +1,29 @@
 //
-//  OrdersVC.swift
+//  PurchasesVC.swift
 //  Finabit Mobile
 //
-//  Created by Hivzi on 27.3.22.
+//  Created by Hivzi on 7.7.22.
 //
 
 import UIKit
 import CoreData
-
-class OrdersVC: UIViewController {
+class PurchasesVC: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var lastVisit: VisitInSqLite?
     @IBOutlet weak var vleraETransLabel: UILabel!
     @IBOutlet weak var numriITransLabel: UILabel!
+    
     @IBOutlet weak var tableView: UITableView!
     private var transactions: [TransactionInSqLite] = []
     private var vleraETransactionit: Double = 0.0
     private var numriITransaksionit: Int?
+
     override func viewDidLoad() {
         tableView.dataSource = self
         tableView.delegate =  self
-       
         super.viewDidLoad()
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         numriITransaksionit = transactions.count
@@ -32,9 +33,9 @@ class OrdersVC: UIViewController {
     }
    
     private func fetchItems() {
-        PersistenceManager.shared.fetchingOrderTransactionsByDate { [self] result in
+        PersistenceManager.shared.fetchingPurcheasTransactionsByDate { [self] result in
             switch result {
-            case .success(let transactionsFromSqLite):                
+            case .success(let transactionsFromSqLite):
                 self.transactions = transactionsFromSqLite
                 self.tableView.reloadData()
                 vleraETransactionit = 0
@@ -49,44 +50,47 @@ class OrdersVC: UIViewController {
         }
     }
     
-    @IBAction func newOrderPressed(_ sender: UIButton) {
-        let request : NSFetchRequest<VisitInSqLite> = VisitInSqLite.fetchRequest()
+    
+    @IBAction func newPurchasesPressed(_ sender: UIButton) {
+                let request : NSFetchRequest<VisitInSqLite> = VisitInSqLite.fetchRequest()
+        
+                do {
+                     lastVisit =  try context.fetch(request).last
+        
+                } catch {
+             }
+                if lastVisit?.endingDate == nil && lastVisit?.visitId == nil {
+                    self.performSegue(withIdentifier: "PurchasesToVisit", sender: nil)
+                }
+                else if lastVisit?.endingDate == nil && lastVisit?.visitId != nil {
+                    self.performSegue(withIdentifier: "PurchasesToNewOrder", sender: nil)
+                }
+        
+                else {
+                    self.performSegue(withIdentifier: "PurchasesToVisit", sender: nil)
+                }
+    }
+      
 
-        do {
-             lastVisit =  try context.fetch(request).last
-
-        } catch {
-     }
-        if lastVisit?.endingDate == nil && lastVisit?.visitId == nil {
-            self.performSegue(withIdentifier: "OrdersToVisit", sender: nil)
-        }
-        else if lastVisit?.endingDate == nil && lastVisit?.visitId != nil {
-            self.performSegue(withIdentifier: "OrdersToNewOrder", sender: nil)
-        }
-        else {
-            self.performSegue(withIdentifier: "OrdersToVisit", sender: nil)
-        }
-     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          let destinationVC = segue.destination as? NewOrderVC
         let destinationVC1 = segue.destination as? VisitVC
-         if segue.identifier == "OrdersToNewOrder"  {
-             destinationVC?.transactionType = 15
+         if segue.identifier == "PurchasesToNewOrder"  {
+             destinationVC?.transactionType = 2
          }
         else  {
-            destinationVC1?.transactionTypeInVisit = 15
+            destinationVC1?.transactionTypeInVisit = 2
         }
-     }
-   }
+    }
+}
 
-
-extension OrdersVC: UITableViewDelegate, UITableViewDataSource {
+extension PurchasesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         transactions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath)  as? OrderCell else {return UITableViewCell()}
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "PurcheaseCell", for: indexPath)  as? OrderCell else {return UITableViewCell()}
         
         DispatchQueue.main.async
         {

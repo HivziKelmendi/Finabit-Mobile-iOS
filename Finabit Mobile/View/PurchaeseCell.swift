@@ -1,14 +1,14 @@
 //
-//  OrderCell.swift
+//  PurchaeseCell.swift
 //  Finabit Mobile
 //
-//  Created by Hivzi on 4.6.22.
+//  Created by Hivzi on 12.7.22.
 //
 
 import UIKit
 
-class OrderCell: UITableViewCell {
-   
+class PurchaeseCell: UITableViewCell {
+
     @IBOutlet weak var konsumatori: UILabel!
     @IBOutlet weak var data: UILabel!
     @IBOutlet weak var shuma: UILabel!
@@ -21,7 +21,7 @@ class OrderCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    
+
     func updateTransactionInVisits(from newTransaction: TransactionInSqLite) {
         konsumatori.text = newTransaction.partnerName
         shuma.text = String(format: "%.1f", newTransaction.allValue)
@@ -41,7 +41,7 @@ class OrderCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
-    
+
     func dateFromWebtoApp(_ dateString: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")

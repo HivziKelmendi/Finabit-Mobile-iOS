@@ -27,6 +27,7 @@ class NewOrderVC: UIViewController {
     private var longitude: String?
     private var latitude: String?
     private var transactionId: Int32?
+     var transactionType: Int32?
     
     private var allValue: Double = 0.0
     private var shifra: String?
@@ -90,7 +91,7 @@ class NewOrderVC: UIViewController {
             clientLable.text = partnerName
             dueValue.text =  "\(lastVisit.dueVaule ?? 0)"
             discountPercent.text = "\(lastVisit.discontPercent ?? 0)"
-            dateLabel.text = getDate()
+            dateLabel.text = getDateForLabel()
         } catch {
         }
     }
@@ -113,6 +114,13 @@ class NewOrderVC: UIViewController {
     formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
     let result = formatter.string(from: currentDateTime)
         return result
+    }
+    func getDateForLabel() -> String {
+        let currentDateTime = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        let result = formatter.string(from: currentDateTime)
+            return result
     }
     
     func getDateToCloseVisit() -> String {
@@ -166,7 +174,7 @@ class NewOrderVC: UIViewController {
 
          } catch {
          }
-         transaction = Transaction(iD: transactionId!, transactionNo: nil, invoiceNo: nil, transactionType: nil, transactionDate: transactionDate, partnerName: partnerName, partnerId: partnerId, visitId: visitId, departmentId: departmentId, insDate: transactionDate, insBY: nil, employeeId: nil, iSynchronized: 0, vATPrecentId: nil, dueDays: nil, paymentVaule: nil, allValue: nil, longitude: longitude, latitude: latitude, serviceTypeID: nil, assetId: nil, bl: nil, memo: nil, llogaria_NotaKreditore: nil, vlera_NotaKreditore: nil, isPrintFiscalInvoice: nil, IsPriceFromPartner: nil, nrIFatBlerje: nil, internalDepartmentID: internalDepartmentId, verifyFiscal: nil)
+         transaction = Transaction(iD: transactionId!, transactionNo: nil, invoiceNo: nil, transactionType: transactionType, transactionDate: transactionDate, partnerName: partnerName, partnerId: partnerId, visitId: visitId, departmentId: departmentId, insDate: transactionDate, insBY: nil, employeeId: nil, iSynchronized: 0, vATPrecentId: nil, dueDays: nil, paymentVaule: nil, allValue: nil, longitude: longitude, latitude: latitude, serviceTypeID: nil, assetId: nil, bl: nil, memo: nil, llogaria_NotaKreditore: nil, vlera_NotaKreditore: nil, isPrintFiscalInvoice: nil, IsPriceFromPartner: nil, nrIFatBlerje: nil, internalDepartmentID: internalDepartmentId, verifyFiscal: nil)
     }
         
     @IBAction func saveTransactionAndTransactionDetails(_ sender: UIBarButtonItem) {

@@ -558,12 +558,12 @@ struct PersistenceManager {
         }
     }
     
-    // MARK: - Fetching Traansactions by date
+    // MARK: - Fetching Order Traansactions by date
 
-     func fetchingTransactionsByDate( completion: @escaping (Result<[TransactionInSqLite], Error>) -> Void) {
+     func fetchingOrderTransactionsByDate( completion: @escaping (Result<[TransactionInSqLite], Error>) -> Void) {
      let request : NSFetchRequest<TransactionInSqLite> = TransactionInSqLite.fetchRequest()
         let currentDate = getDate()
-        request.predicate = NSPredicate(format: "transactionDate CONTAINS %@", currentDate )
+        request.predicate = NSPredicate(format: "transactionDate CONTAINS %@ AND transactionType = %@", currentDate, "15")
         do {
          let transactionsToUpload = try context.fetch(request)
             
@@ -574,7 +574,21 @@ struct PersistenceManager {
         }
     }
     
-    
+    // MARK: - Fetching Purchase Traansactions by date
+
+    func fetchingPurcheasTransactionsByDate( completion: @escaping (Result<[TransactionInSqLite], Error>) -> Void) {
+    let request : NSFetchRequest<TransactionInSqLite> = TransactionInSqLite.fetchRequest()
+       let currentDate = getDate()
+       request.predicate = NSPredicate(format: "transactionDate CONTAINS %@ AND transactionType = %@", currentDate, "2")
+       do {
+        let transactionsToUpload = try context.fetch(request)
+           
+           completion(.success(transactionsToUpload))
+           
+       } catch {
+           completion(.failure(DatabaseError.failedToFetchData))
+       }
+   }
     // MARK: - Fetching TraansactionDetails that aren't sincronised from Core Data
 
      func fetchingTransactionsDetails( completion: @escaping (Result<[TransactionDetalisInSqLite], Error>) -> Void) {
