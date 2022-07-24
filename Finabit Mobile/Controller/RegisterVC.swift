@@ -14,6 +14,9 @@ class RegisterVC: UIViewController {
     private var departments: [Department]?
     private let baseUsersUrl = Constants.baseUsersUrl
     private let baseDepartmentUrl = Constants.baseDepartmentUrl
+    private var usersSaved = false
+    private var departmentsSaved = false
+    
 
     let xmlUserParser = FeedUserParser()
     let xmlDepartmentParser = FeedDepartmenParser()
@@ -40,7 +43,7 @@ class RegisterVC: UIViewController {
     func showfailureAlert() {
         DispatchQueue.main.async {
 
-            let alert = UIAlertController(title: "Verejtje", message: "Shenimet  nuk jane ruajtur me sukses", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Verejtje", message: "Shenimet  nuk jane ruajtur", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alert.addAction(action)
             self.present(alert, animated: true) }
@@ -65,19 +68,18 @@ extension RegisterVC: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let safeIpAddress = textField.text {
-            let usersEndpoint = "http://\(safeIpAddress)\(baseUsersUrl)"
             
-           let departmentsEndpoint = "http://\(safeIpAddress)\(baseDepartmentUrl)"
+            let usersEndpoint = "http://\(safeIpAddress)\(baseUsersUrl)"
+            let departmentsEndpoint = "http://\(safeIpAddress)\(baseDepartmentUrl)"
             
             xmlUserParser.parseUser(url: usersEndpoint) { (users) in
                 self.users = users
                 PersistenceManager.shared.addUsersToCoreData(users: users) { result in
                     switch result {
                     case .success():
-                        print(users.count)
+                        self.usersSaved = true
                     case .failure(let error):
-                        print(error.localizedDescription)
-                    }
+                        self.usersSaved = false                    }
                 }
             }
             
@@ -85,12 +87,20 @@ extension RegisterVC: UITextFieldDelegate {
                 self.departments = departments
                 PersistenceManager.shared.addDepartmentsToCoreData(departments: departments) {result in
                     switch result {
-                    case .success():  self.showSuccessAlert()
+                    case .success():
+                        self.departmentsSaved = true
+                        if self.usersSaved && self.departmentsSaved == true {
+                            self.showSuccessAlert()
+                        }
+                      
                     case .failure(let error):
-                        print(error.localizedDescription)
+                        self.usersSaved = false
+                        if self.usersSaved || self.departmentsSaved == false {
+                            self.showfailureAlert()
+                        }
                     }
                 }
-                          }
+            }
         }
         textField.text = ""
             

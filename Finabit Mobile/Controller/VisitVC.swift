@@ -6,32 +6,40 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 
-class VisitVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class VisitVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, CLLocationManagerDelegate {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var visit: Visit?
     private var partnerId: Int16?
     private var partnerName: String?
     private var dueVaule: Double?
     private var discontPercent: Double?
+    private var partnerPicture: NSData?
+    private var startLongitude = ""
+    private var startLatitude = ""
     @IBOutlet weak var selectedClient: UILabel!
     var startOfVisit = ""
     @IBOutlet weak var clientLabel: UIButton!
     var transactionTypeInVisit = 0
     var chosenClient: PartnerInSqLite?
     let imagePicker = UIImagePickerController()
+    let locationManager = CLLocationManager()
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
       startOfVisit = getDate()
         imagePicker.delegate = self
-        imagePicker.allowsEditing = false
+        imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        selectedClient.text = chosenClient?.partnerName
-//    }
+
     func getDate() -> String {
     let currentDateTime = Date()
     let formatter = DateFormatter()
@@ -62,22 +70,34 @@ class VisitVC: UIViewController, UIImagePickerControllerDelegate & UINavigationC
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.editedImage] as? UIImage {
-//            saveImage(with: image)
-            print(image.size)
+            let image2 = image.pngData()  as? NSData
+         partnerPicture = image2
             imagePicker.dismiss(animated: true, completion: nil)
+        } else {
+            print("nuk u gjen foto")
         }
     }
 
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            locationManager.stopUpdatingLocation()
+            startLongitude = "\(location.coordinate.latitude)"
+            startLatitude = "\(location.coordinate.longitude)"
+
+            }
+        }
+        
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    
+    
     @IBAction func vazhdoPressed(_ sender: UIButton) {
         guard let departmentId = UDM.shared.defaults.value(forKey: "defaultDepartment") as? String else { return  }
 
         var visitId = 0
         let endVisit = getDate()
-//        var partnerId = (chosenClient?.partnerID)!
-//        var partnerName = chosenClient?.partnerName
-//        var dueVaule = chosenClient?.dueValue
-//        var discontPercent = chosenClient?.discountPercent
-        
         let request : NSFetchRequest<VisitInSqLite> = VisitInSqLite.fetchRequest()
 
         do {
@@ -90,9 +110,7 @@ class VisitVC: UIViewController, UIImagePickerControllerDelegate & UINavigationC
             
         }
         
-        
-        
-         visit =  Visit(visitId: visitId, updatePartnerCoords: 0, syncID: 1, setPartnerPosition: 1, setPartnerPicture: 0, partnerPicture: nil, partnerID: partnerId, memoID: 0, longitudeEnd: nil, longitudeBegin: nil, latitudeEnd: nil, latitudeBegin: nil, isSynchronized: 0, insBy: 1, hasErrorSync: 1, endingDate: nil, beginningDate: startOfVisit, departmentId: Int(departmentId), partnerName: partnerName, dueValue: dueVaule, discontPercent: discontPercent)
+         visit =  Visit(visitId: visitId, updatePartnerCoords: 0, syncID: 1, setPartnerPosition: 1, setPartnerPicture: 0, partnerPicture: partnerPicture, partnerID: partnerId, memoID: 0, longitudeEnd: nil, longitudeBegin: startLongitude, latitudeEnd: nil, latitudeBegin: startLatitude, isSynchronized: 0, insBy: 1, hasErrorSync: 1, endingDate: nil, beginningDate: startOfVisit, departmentId: Int(departmentId), partnerName: partnerName, dueValue: dueVaule, discontPercent: discontPercent)
         if let safeVisit = visit {
             PersistenceManager.shared.addVisitToCoreData(visit: safeVisit)
                       
@@ -106,8 +124,7 @@ class VisitVC: UIViewController, UIImagePickerControllerDelegate & UINavigationC
              destinationVC?.transactionType = Int32(transactionTypeInVisit)
          }
         else  {
-    }
-    
+       }
     }
 }
 

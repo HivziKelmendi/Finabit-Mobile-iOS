@@ -28,6 +28,7 @@ class PurchaeseCell: UITableViewCell {
         let date = newTransaction.transactionDate
         if newTransaction.iSynchronized == 1 {
             isSynchronizedImage.image = image1
+            isSynchronizedImage.tintColor = .systemGreen
         }
         else {
             isSynchronizedImage.image = image2

@@ -7,15 +7,19 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 
-class NewOrderVC: UIViewController {
+
+
+class NewOrderVC: UIViewController  {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     @IBOutlet weak var tableView: UITableView!
     
     let urlToUpload = Constants.urlToUpload
     var transaction: Transaction?
     var transactionDetails: [TransactionDetails] = []
-    
+    let locationManager = CLLocationManager()
+
     private var deartmentName: String?
     private var departmentId: Int16?
     private var internalDepartmentId: Int32?
@@ -65,18 +69,23 @@ class NewOrderVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         fetchLastVisit()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
         shifraTextField.delegate = self
         emertimiTextField.delegate = self
         sasiaTextField.delegate = self
         cmimiTextField.delegate = self
         rabatTextField.delegate = self
         rabat2TextField.delegate = self
+        locationManager.requestLocation()
+
             }
     
     override func viewWillAppear(_ animated: Bool) {
         departmentLabel.text = deartmentName
     }
         
+    
     func fetchLastVisit() {
         let request : NSFetchRequest<VisitInSqLite> = VisitInSqLite.fetchRequest()
         do {
@@ -85,8 +94,8 @@ class NewOrderVC: UIViewController {
             partnerId = lastVisit.partnerID
             partnerName = lastVisit.partnerName
             visitId = lastVisit.visitId
-            longitude = lastVisit.longitudeEnd
-            latitude = lastVisit.longitudeEnd
+//            longitude = lastVisit.longitudeEnd
+//            latitude = lastVisit.longitudeEnd
             internalDepartmentId = lastVisit.departmentId
             clientLable.text = partnerName
             dueValue.text =  "\(lastVisit.dueVaule ?? 0)"
@@ -96,17 +105,19 @@ class NewOrderVC: UIViewController {
         }
     }
     
+    
     @IBAction func getDpartmentPressed(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "Department") as! DepartmentVC
         present(vc, animated: true)
         vc.modalPresentationStyle = .popover
-        vc.completionHandler = { chosenDepartment in
+        vc.completionHandler = { [self] chosenDepartment in
             self.deartmentName = chosenDepartment.departmentName
             self.departmentLabel.text = self.deartmentName
             self.departmentId = chosenDepartment.departmentID
             self.createTransaction()
         }
     }
+    
     
     func getDate() -> String {
     let currentDateTime = Date()
@@ -123,6 +134,7 @@ class NewOrderVC: UIViewController {
             return result
     }
     
+    
     func getDateToCloseVisit() -> String {
     let currentDateTime = Date()
     let formatter = DateFormatter()
@@ -130,6 +142,7 @@ class NewOrderVC: UIViewController {
     let result = formatter.string(from: currentDateTime)
         return result
     }
+    
     
     @IBAction func addItem(_ sender: Any) {
         
@@ -150,6 +163,7 @@ class NewOrderVC: UIViewController {
             self.coefficient = chosenItem.coefficient
         }
     }
+    
         
     @IBAction func shtoPressed(_ sender: UIButton) {
        
@@ -161,6 +175,7 @@ class NewOrderVC: UIViewController {
         transactionDetailsId += 1
         tableView.reloadData()
     }
+    
     
     func createTransaction() {
          let request : NSFetchRequest<TransactionInSqLite> = TransactionInSqLite.fetchRequest()
@@ -183,10 +198,7 @@ class NewOrderVC: UIViewController {
         }
 
         PersistenceManager.shared.addTransactionDetailsToCoreData(transactionDetails: transactionDetails)
-          endingDateForVisit = getDateToCloseVisit()
-        updateVisitInSqLite()
-        updateTransactionInSqLite()
-        
+          updateTransactionInSqLite()
         
         let uploadOrder = UploadOrder()
         uploadOrder.getDataToupload()
@@ -196,15 +208,20 @@ class NewOrderVC: UIViewController {
                 PersistenceManager.shared.SynchronizeData()
             }
         }
-        showActionsheet()
+//        endingDateForVisit = getDateToCloseVisit()
+//        updateVisitInSqLite()
+        showActionsheetToCloseVisit()
         }
+    
     
     func updateVisitInSqLite() {
         let request : NSFetchRequest<VisitInSqLite> = VisitInSqLite.fetchRequest()
+        locationManager.requestLocation()
         do {
             guard let lastVisit =  try context.fetch(request).last else { return}
             lastVisit.setValue(endingDateForVisit, forKey: "endingDate")
-
+            lastVisit.setValue(latitude, forKey: "latitudeEnd")
+            lastVisit.setValue(longitude, forKey: "longitudeEnd")
         } catch {
      }
         do {
@@ -214,35 +231,39 @@ class NewOrderVC: UIViewController {
             print(error.localizedDescription)
         }
     }
+  
     
     func updateTransactionInSqLite() {
         let request : NSFetchRequest<TransactionInSqLite> = TransactionInSqLite.fetchRequest()
         do {
             guard let lastTransaction =  try context.fetch(request).last else { return}
             lastTransaction.setValue(allValue, forKey: "allValue")
-
-        } catch {
-     }
+           }
+        catch {
+            }
         do {
             try context.save()
-          
-        } catch {
+          }
+        catch {
             print(error.localizedDescription)
-        }
-    }
+          }
+       }
          
     
-    func showActionsheet() {
+    func showActionsheetToCloseVisit() {
         let actionsheet = UIAlertController(title: "", message: "Mbyll Viziten", preferredStyle: .actionSheet)
         actionsheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
            print("cancel tapped")
         }))
         actionsheet.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            self.endingDateForVisit = self.getDateToCloseVisit()
+            self.updateVisitInSqLite()
             self.navigationController?.popToRootViewController(animated: true)
         }))
         present(actionsheet, animated: true)
     }
 }
+
 
 extension NewOrderVC: UITextFieldDelegate {
     
@@ -304,6 +325,29 @@ extension NewOrderVC: UITableViewDelegate, UITableViewDataSource {
         return cellHeight
     }
 }
+
+
+
+//MARK: - CLLocationManagerDelegate
+
+extension NewOrderVC: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            locationManager.stopUpdatingLocation()
+            latitude = "\(location.coordinate.latitude)"
+            longitude = "\(location.coordinate.longitude)"
+         
+            
+            }
+        }
+        
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+    }
+}
+
+
+
 
 struct Transaction {
     var iD: Int32

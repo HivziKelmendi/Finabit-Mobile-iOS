@@ -387,6 +387,7 @@ struct PersistenceManager {
         newVisit.partnerName = visit.partnerName
         newVisit.dueVaule = Double(visit.dueValue ?? 0)
         newVisit.discontPercent = Double(visit.discontPercent ?? 0)
+        newVisit.partnerPicture = visit.partnerPicture as Data?
         do {
             try context.save()
           
@@ -622,6 +623,9 @@ struct PersistenceManager {
            let transactions =  try context.fetch(request1)
             for transaction in transactions {
                 transaction.setValue(1, forKey: "iSynchronized")
+//                let ordersVC = OrdersVC()
+//                guard let  tableView = ordersVC.tableView else { return }
+//                tableView.reloadData()
             }
         
         } catch {

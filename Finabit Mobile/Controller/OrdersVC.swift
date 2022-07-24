@@ -25,24 +25,29 @@ class OrdersVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        fetchItems()
         numriITransaksionit = transactions.count
         vleraETransLabel.text = String(format: "%.1f", vleraETransactionit)
         numriITransLabel.text = String(numriITransaksionit ?? 0)
-        fetchItems()
+      
     }
    
-    private func fetchItems() {
+    public func fetchItems() {
         PersistenceManager.shared.fetchingOrderTransactionsByDate { [self] result in
             switch result {
             case .success(let transactionsFromSqLite):                
                 self.transactions = transactionsFromSqLite
-                self.tableView.reloadData()
+                tableView.reloadData()
                 vleraETransactionit = 0
                 for transaction in transactions {
                     if transaction != nil {
                         vleraETransactionit += transaction.allValue
                     }
                 }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 16) {
+                    self.tableView.reloadData()
+                }
+          
             case .failure(let error):
                 print(error.localizedDescription)
             }
