@@ -12,7 +12,7 @@ import CoreData
 class LoginVC: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
    var localSettingsVC = LocalSettingsVC()
-    var user: [UserInSqLite] = []
+    private var user: [UserInSqLite] = []
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
@@ -22,18 +22,15 @@ class LoginVC: UIViewController {
     
 
 }
+
 extension LoginVC: UISearchBarDelegate {
    
+  // merren useat nga CoreData dhe krahasohet me pin-in. Nese perputhen dhe paraprakisht eshte i ruajtur default Departmenti, lejohet qasja ne aplikacion. Nese perputhet pin-i por nuk eshte zgjedhur default departmentin, kalohet te Local Settings
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text else { return}
         let request : NSFetchRequest<UserInSqLite> = UserInSqLite.fetchRequest()
         let predicate = NSPredicate(format: "userID CONTAINS[cd] %@", text)
         request.predicate = predicate
-//        request.fetchLimit = 1
-        
-//        let sort = NSSortDescriptor(key: "userID", ascending: true)
-//        request.sortDescriptors = [sort]
-        
         do {
             let defaultDepartment = UDM.shared.defaults.value(forKey: "defaultDepartment") as? String
            let user =  try context.fetch(request)

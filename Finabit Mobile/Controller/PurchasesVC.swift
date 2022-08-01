@@ -17,10 +17,16 @@ class PurchasesVC: UIViewController {
     private var transactions: [TransactionInSqLite] = []
     private var vleraETransactionit: Double = 0.0
     private var numriITransaksionit: Int?
-
+    
     override func viewDidLoad() {
         tableView.dataSource = self
         tableView.delegate =  self
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("true"), object: nil, queue: nil) { _ in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+           
+        }
         super.viewDidLoad()
     }
     
@@ -31,7 +37,8 @@ class PurchasesVC: UIViewController {
         vleraETransLabel.text = String(format: "%.1f", vleraETransactionit)
         numriITransLabel.text = String(numriITransaksionit ?? 0)
     }
-   
+    
+    // merren transaksionet nga CoreData dhe mbushet tableView si dhe paraqiten numri dhe vlera e transaksioneve per ate dite
     private func fetchItems() {
         PersistenceManager.shared.fetchingPurcheasTransactionsByDate { [self] result in
             switch result {
@@ -44,45 +51,46 @@ class PurchasesVC: UIViewController {
                         vleraETransactionit += transaction.allValue
                     }
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 16) {
-                    self.tableView.reloadData()
-                }
-          
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 16) {
+//                    self.tableView.reloadData()
+//                }
+                
             case .failure(let error):
                 print(error.localizedDescription)
             }
-
+            
         }
     }
     
     
+    // merret vizita e fundit nga CoreData dhe shikohet a ka vizite te hapur paraprakisht(dmth qe e ka endingDate nil). Nese  endingData eshte nil por edhe visitId eshte nil, nenkupton qe nuk ka te ruajtur asnje vizite ne CoreData dhe hapet vizite e re. Nese vizitId nuk eshte nil por endingData eshte nil, nenkupton qe ka vizite te hapur, dhe kalohet te  shitjet. Opsioni i trete mbetet qe te kalohet te vizita e re.
     @IBAction func newPurchasesPressed(_ sender: UIButton) {
-                let request : NSFetchRequest<VisitInSqLite> = VisitInSqLite.fetchRequest()
+        let request : NSFetchRequest<VisitInSqLite> = VisitInSqLite.fetchRequest()
         
-                do {
-                     lastVisit =  try context.fetch(request).last
+        do {
+            lastVisit =  try context.fetch(request).last
+            
+        } catch {
+        }
+        if lastVisit?.endingDate == nil && lastVisit?.visitId == nil {
+            self.performSegue(withIdentifier: "PurchasesToVisit", sender: nil)
+        }
+        else if lastVisit?.endingDate == nil && lastVisit?.visitId != nil {
+            self.performSegue(withIdentifier: "PurchasesToNewOrder", sender: nil)
+        }
         
-                } catch {
-             }
-                if lastVisit?.endingDate == nil && lastVisit?.visitId == nil {
-                    self.performSegue(withIdentifier: "PurchasesToVisit", sender: nil)
-                }
-                else if lastVisit?.endingDate == nil && lastVisit?.visitId != nil {
-                    self.performSegue(withIdentifier: "PurchasesToNewOrder", sender: nil)
-                }
-        
-                else {
-                    self.performSegue(withIdentifier: "PurchasesToVisit", sender: nil)
-                }
+        else {
+            self.performSegue(withIdentifier: "PurchasesToVisit", sender: nil)
+        }
     }
-      
-
+    
+    // qe te dihet se a hapet vizita nga shitjet apo porosite, dergohet transacionType. TransactionType e porosive eshte 15, kurse per shitjet 2
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         let destinationVC = segue.destination as? NewOrderVC
+        let destinationVC = segue.destination as? NewOrderVC
         let destinationVC1 = segue.destination as? VisitVC
-         if segue.identifier == "PurchasesToNewOrder"  {
-             destinationVC?.transactionType = 2
-         }
+        if segue.identifier == "PurchasesToNewOrder"  {
+            destinationVC?.transactionType = 2
+        }
         else  {
             destinationVC1?.transactionTypeInVisit = 2
         }

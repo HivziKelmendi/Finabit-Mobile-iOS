@@ -10,8 +10,8 @@ import UIKit
 class DepartmentVC: UIViewController {
     var departments: [DepartmentInSqlite] = []
     var completionHandler: ((DepartmentInSqlite) -> Void)?
-
-
+    
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class DepartmentVC: UIViewController {
         fetchDepartment()
     }
     private func fetchDepartment() {
-            PersistenceManager.shared.fetchingDepartmentFromSqLite {[weak self] result in
+        PersistenceManager.shared.fetchingDepartmentFromSqLite {[weak self] result in
             switch result {
             case .success(let departments):
                 self?.departments = departments
@@ -51,21 +51,9 @@ extension DepartmentVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let department = departments[indexPath.row]
-      
-           completionHandler!(department)
-       dismiss(animated: true, completion: nil)
-//                performSegue(withIdentifier: "DepartmentToNewOrderVC", sender: self)
+        completionHandler!(department)
+        dismiss(animated: true, completion: nil)
     }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let destinationVC = segue.destination as! NewOrderVC
-//        if segue.identifier == "DepartmentToNewOrderVC" {
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                let department = departments[indexPath.row]
-//                destinationVC.chosenDepartment = department
-//
-//            }
-//        }
-//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var cellHeight:CGFloat = CGFloat()

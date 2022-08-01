@@ -10,7 +10,7 @@ import UIKit
 class ClientVC: UIViewController {
     
     var completionHandler: ((PartnerInSqLite) -> Void)?
-
+    
     var clients: [PartnerInSqLite?] = []
     @IBOutlet weak var tableView: UITableView!
     
@@ -20,9 +20,9 @@ class ClientVC: UIViewController {
         tableView.delegate =  self
         fetchPartner()
     }
-
+    
     private func fetchPartner() {
-            PersistenceManager.shared.fetchingPartnerFromSqLite {[weak self] result in
+        PersistenceManager.shared.fetchingPartnerFromSqLite {[weak self] result in
             switch result {
             case .success(let partners):
                 self?.clients = partners
@@ -51,24 +51,24 @@ extension ClientVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "ClientToVisit", sender: self)
+        //        performSegue(withIdentifier: "ClientToVisit", sender: self)
         guard let client = clients[indexPath.row] else {return}
         if  completionHandler != nil {
-           completionHandler!(client)
-       dismiss(animated: true, completion: nil)
+            completionHandler!(client)
+            dismiss(animated: true, completion: nil)
         } else {
             print("ska kliente")
         }
     }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let destinationVC = segue.destination as! VisitVC
-//        if segue.identifier == "ClientToVisit" {
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                let client = clients[indexPath.row]
-//                destinationVC.chosenClient = client
-//            }
-//        }
-//    }
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        let destinationVC = segue.destination as! VisitVC
+    //        if segue.identifier == "ClientToVisit" {
+    //            if let indexPath = tableView.indexPathForSelectedRow {
+    //                let client = clients[indexPath.row]
+    //                destinationVC.chosenClient = client
+    //            }
+    //        }
+    //    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var cellHeight:CGFloat = CGFloat()

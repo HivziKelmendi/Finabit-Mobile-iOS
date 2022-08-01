@@ -4,11 +4,9 @@
 //
 //  Created by Hivzi on 13.2.22.
 //
-
 import UIKit
 
 class RegisterVC: UIViewController {
-
     
     private var users: [User]?
     private var departments: [Department]?
@@ -17,7 +15,7 @@ class RegisterVC: UIViewController {
     private var usersSaved = false
     private var departmentsSaved = false
     
-
+    
     let xmlUserParser = FeedUserParser()
     let xmlDepartmentParser = FeedDepartmenParser()
     
@@ -27,7 +25,11 @@ class RegisterVC: UIViewController {
         textField?.delegate = self
     }
     @IBAction func buttonPressed(_ sender: UIButton) {
-        textField.endEditing(true)
+        self.textField.endEditing(true)
+        let waitingScreen = self.waitingScreen()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
+                self.stopwaitingScreen(loader: waitingScreen)
+        }
     }
     
     func showSuccessAlert() {
@@ -38,20 +40,20 @@ class RegisterVC: UIViewController {
             }
             alert.addAction(action)
             self.present(alert, animated: true) }
-}
+    }
     
     func showfailureAlert() {
         DispatchQueue.main.async {
-
+            
             let alert = UIAlertController(title: "Verejtje", message: "Shenimet  nuk jane ruajtur", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alert.addAction(action)
             self.present(alert, animated: true) }
-  }
+    }
 }
 
 extension RegisterVC: UITextFieldDelegate {
-        
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
         return true
@@ -66,6 +68,7 @@ extension RegisterVC: UITextFieldDelegate {
         }
     }
     
+    // Me keto dy metoda, download-ohen userat dhe departmentet dhe ruhen ne pajisje
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let safeIpAddress = textField.text {
             
@@ -92,7 +95,7 @@ extension RegisterVC: UITextFieldDelegate {
                         if self.usersSaved && self.departmentsSaved == true {
                             self.showSuccessAlert()
                         }
-                      
+                        
                     case .failure(let error):
                         self.usersSaved = false
                         if self.usersSaved || self.departmentsSaved == false {
@@ -103,6 +106,6 @@ extension RegisterVC: UITextFieldDelegate {
             }
         }
         textField.text = ""
-            
+        
     }
 }

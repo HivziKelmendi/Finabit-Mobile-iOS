@@ -63,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1377" y="47"/>
+            <point key="canvasLocation" x="1342" y="30"/>
         </scene>
         <!--Login-->
         <scene sceneID="WGZ-e1-D4u">
@@ -291,8 +291,8 @@
                         <outlet property="numriITransLabel" destination="yGS-83-fKZ" id="Gf0-M0-9Vx"/>
                         <outlet property="tableView" destination="bC1-Kp-rm0" id="7FI-Et-z8X"/>
                         <outlet property="vleraETransLabel" destination="5gy-eS-tzW" id="J9I-Ll-Ka8"/>
-                        <segue destination="IrE-0I-NQj" kind="show" identifier="OrdersToVisit" id="NVZ-2W-kTd"/>
                         <segue destination="ofm-Ua-lEt" kind="show" identifier="OrdersToNewOrder" id="Bw5-NQ-Mlv"/>
+                        <segue destination="IrE-0I-NQj" kind="show" identifier="OrdersToVisit" id="5Eo-6B-gUn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RFW-li-XoM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -307,7 +307,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fXq-cD-Drh">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="fXq-cD-Drh">
                                 <rect key="frame" x="0.0" y="44" width="375" height="384"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PcY-cM-Y5I" userLabel="firstView">
@@ -459,10 +459,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1e0-9w-NQK" userLabel="secondView">
-                                        <rect key="frame" x="0.0" y="169" width="375" height="215"/>
+                                        <rect key="frame" x="0.0" y="182" width="375" height="202"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="vMH-k6-hyr">
-                                                <rect key="frame" x="10" y="0.0" width="355" height="215"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vMH-k6-hyr">
+                                                <rect key="frame" x="10" y="0.0" width="355" height="202"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeV-D2-97s">
                                                         <rect key="frame" x="0.0" y="0.0" width="355" height="24"/>
@@ -479,7 +479,7 @@
                                                         </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZW7-Wl-g13">
-                                                        <rect key="frame" x="0.0" y="38" width="355" height="34"/>
+                                                        <rect key="frame" x="0.0" y="34" width="355" height="34"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shifra" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S7K-sR-6ha">
                                                                 <rect key="frame" x="0.0" y="0.0" width="167.5" height="34"/>
@@ -494,7 +494,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zT7-uh-hHn">
-                                                        <rect key="frame" x="0.0" y="85.5" width="355" height="34"/>
+                                                        <rect key="frame" x="0.0" y="78" width="355" height="34"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sasia" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uLY-DN-vnf">
                                                                 <rect key="frame" x="0.0" y="0.0" width="167.5" height="34"/>
@@ -509,7 +509,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="m4Y-Mi-N6g">
-                                                        <rect key="frame" x="0.0" y="133.5" width="355" height="34"/>
+                                                        <rect key="frame" x="0.0" y="122" width="355" height="34"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rabat" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j9P-7L-WYZ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="167.5" height="34"/>
@@ -524,7 +524,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fz8-Uu-jZy">
-                                                        <rect key="frame" x="0.0" y="181" width="355" height="34"/>
+                                                        <rect key="frame" x="0.0" y="166" width="355" height="36"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Unit" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dRS-QS-Dll">
                                                                 <rect key="frame" x="0.0" y="0.0" width="167.5" height="34"/>
@@ -670,7 +670,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cli-bZ-LLD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10021.6" y="-699.40029985007504"/>
+            <point key="canvasLocation" x="9938" y="-707"/>
         </scene>
         <!--DepartmentVC-->
         <scene sceneID="bMe-2h-Umh">
@@ -780,6 +780,9 @@
                                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="anuloPressed:" destination="IrE-0I-NQj" eventType="touchUpInside" id="BtD-dK-Xiu"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuu-01-jkN">
                                                 <rect key="frame" x="202.5" y="0.0" width="132.5" height="37"/>
@@ -1104,7 +1107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XRj-5q-SK4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2309" y="-282"/>
+            <point key="canvasLocation" x="2098" y="-281"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LAq-9J-jxn">
@@ -1308,8 +1311,8 @@
                         <outlet property="numriITransLabel" destination="qEh-31-8iS" id="CqQ-P6-tP2"/>
                         <outlet property="tableView" destination="c4A-qu-3Sn" id="q1d-mA-sqU"/>
                         <outlet property="vleraETransLabel" destination="d1T-K6-GqU" id="JH6-E2-j5c"/>
-                        <segue destination="IrE-0I-NQj" kind="show" identifier="PurchasesToVisit" id="aYf-Ti-Ctv"/>
                         <segue destination="ofm-Ua-lEt" kind="show" identifier="PurchasesToNewOrder" id="W4m-W0-l5Z"/>
+                        <segue destination="IrE-0I-NQj" kind="show" identifier="PurchasesToVisit" id="l45-OV-mwA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="haR-Rm-n72" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1337,9 +1340,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aYf-Ti-Ctv"/>
-        <segue reference="W4m-W0-l5Z"/>
-        <segue reference="dyt-od-cee"/>
+        <segue reference="5Eo-6B-gUn"/>
+        <segue reference="Bw5-NQ-Mlv"/>
+        <segue reference="4ql-JR-Rlq"/>
         <segue reference="QrA-fC-ePw"/>
     </inferredMetricsTieBreakers>
     <resources>

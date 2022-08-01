@@ -9,7 +9,6 @@ import Foundation
 import CoreData
 import UIKit
 
-
 struct PersistenceManager {
     
     enum DatabaseError: Error {
@@ -63,16 +62,14 @@ struct PersistenceManager {
             newUser.setValue(user.Allow_Dalja_NAV, forKey: "allow_Dalja_NAV")
             usersInSqLite.append(newUser)
         }
-            
             do {
                 try context.save()
                 completion(.success(()))
             } catch {
                 completion(.failure(error))
+               }
             }
-            
-            
-        } else {
+        else {
           DeleteUserInSqLite()
             for user in users {
                 let newUser = UserInSqLite(context: self.context)
@@ -214,20 +211,6 @@ struct PersistenceManager {
             }
         } else {
             DeleteItemInSqLite()
-            
-//            do {
-//                let itemsIn = try context.fetch(request)
-//
-//                for item in itemsIn {
-//                    context.delete(item)
-//                }
-//
-//                // Save Changes
-//                try context.save()
-//
-//            } catch {
-//
-//            }
           
             let request : NSFetchRequest<ItemInSqLite> = ItemInSqLite.fetchRequest()
             request.includesPropertyValues = false
@@ -317,10 +300,8 @@ struct PersistenceManager {
                 completion(.failure(error))
             }
         }
-       
         else {
             DeletePartnerInSqLite()
-            
             for partner in partners {
             let newpartner = PartnerInSqLite(context: self.context)
                 newpartner.setValue(partner.PartnerID, forKey: "partnerID")
@@ -613,7 +594,6 @@ struct PersistenceManager {
             for visit in visits {
                 visit.setValue(1, forKey: "isSynchronized")
             }
-        
         } catch {
         }
         saveContext()
@@ -623,9 +603,6 @@ struct PersistenceManager {
            let transactions =  try context.fetch(request1)
             for transaction in transactions {
                 transaction.setValue(1, forKey: "iSynchronized")
-//                let ordersVC = OrdersVC()
-//                guard let  tableView = ordersVC.tableView else { return }
-//                tableView.reloadData()
             }
         
         } catch {

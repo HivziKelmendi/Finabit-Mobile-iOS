@@ -11,14 +11,15 @@ class ItemVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var items: [ItemInSqLite] = []
     var completionHandler: ((ItemInSqLite) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate =  self
         fetchItems()
     }
+    
     private func fetchItems() {
-        
         PersistenceManager.shared.fetchingItemFromSqLite {[weak self] result in
             switch result {
             case .success(let items):
@@ -49,12 +50,12 @@ extension ItemVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         let item = items[indexPath.row]
-       
-            completionHandler!(item)
+        let item = items[indexPath.row]
+        
+        completionHandler!(item)
         dismiss(animated: true, completion: nil)
     }
-
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var cellHeight:CGFloat = CGFloat()

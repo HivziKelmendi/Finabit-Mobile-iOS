@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E4FB3AC2896EBC50059A2ED /* WaitingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FB3AB2896EBC50059A2ED /* WaitingScreen.swift */; };
 		5E60D7BF28316E6C00286693 /* UploadNewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E60D7BE28316E6C00286693 /* UploadNewOrder.swift */; };
 		5E6F5FE327F0553B00F6FD89 /* NewOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F5FE227F0553B00F6FD89 /* NewOrderVC.swift */; };
 		5E6F5FE527F06A1E00F6FD89 /* OrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F5FE427F06A1E00F6FD89 /* OrdersVC.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E4FB3AB2896EBC50059A2ED /* WaitingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingScreen.swift; sourceTree = "<group>"; };
 		5E60D7BE28316E6C00286693 /* UploadNewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadNewOrder.swift; sourceTree = "<group>"; };
 		5E6F5FE227F0553B00F6FD89 /* NewOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderVC.swift; sourceTree = "<group>"; };
 		5E6F5FE427F06A1E00F6FD89 /* OrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				5E89E67027B9575000599C18 /* AppDelegate.swift */,
 				5E89E67227B9575000599C18 /* SceneDelegate.swift */,
+				5E4FB3AB2896EBC50059A2ED /* WaitingScreen.swift */,
 				5EBDE6BD27D204A000F45ED0 /* Model */,
 				5EBDE6BB27D2044200F45ED0 /* View */,
 				5EBDE6BC27D2046800F45ED0 /* Controller */,
@@ -283,6 +286,7 @@
 				5EC4EF69287E057200FF6E3D /* PurchaeseCell.swift in Sources */,
 				5E89E67B27B9575000599C18 /* Finabit_Mobile.xcdatamodeld in Sources */,
 				5ED62A9127DD17EA002CB8EC /* UDM.swift in Sources */,
+				5E4FB3AC2896EBC50059A2ED /* WaitingScreen.swift in Sources */,
 				5E6F5FE327F0553B00F6FD89 /* NewOrderVC.swift in Sources */,
 				5E89E69727C10F1300599C18 /* PersistenceManager.swift in Sources */,
 				5E89E69927C29D3800599C18 /* XMLDepartmenParser.swift in Sources */,
