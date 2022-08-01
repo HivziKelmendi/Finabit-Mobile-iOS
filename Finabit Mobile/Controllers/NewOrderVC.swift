@@ -177,7 +177,7 @@ class NewOrderVC: UIViewController  {
         PersistenceManager.shared.addTransactionDetailsToCoreData(transactionDetails: transactionDetails)
         updateTransactionInSqLite()
         
-        let uploadOrder = UploadOrder()
+        let uploadOrder = UploadData()
         uploadOrder.getDataToupload()
         uploadOrder.XMLUploadParser(url: urlToUpload) { UploadResponse in
             if UploadResponse != nil {
@@ -244,7 +244,6 @@ class NewOrderVC: UIViewController  {
           
         }))
         present(actionsheet, animated: true)
-       
     }
     
     
@@ -351,54 +350,9 @@ extension NewOrderVC: CLLocationManagerDelegate {
 }
 
 
-struct Transaction {
-    var iD: Int32
-    var transactionNo: String?
-    var invoiceNo: String?
-    var transactionType: Int32?
-    var transactionDate: String?
-    var partnerName: String?
-    var partnerId: Int32?
-    var visitId: Int32?
-    var departmentId: Int16?
-    var insDate: String?
-    var insBY: Int32?
-    var employeeId: Int32?
-    var iSynchronized: Int32?
-    var vATPrecentId: Int32?
-    var dueDays: Int32?
-    var paymentVaule: Double?
-    var allValue: Double?
-    var longitude: String?
-    var latitude: String?
-    var serviceTypeID: Int32?
-    var assetId: Int32?
-    var bl: Int32?
-    var memo: String?
-    var llogaria_NotaKreditore: String?
-    var vlera_NotaKreditore: Double?
-    var isPrintFiscalInvoice: Int32?
-    var IsPriceFromPartner: Int32?
-    var nrIFatBlerje: String?
-    var internalDepartmentID: Int32?
-    var verifyFiscal: Int32?
-}
 
-struct TransactionDetails {
-    var id: Int32
-    var itemId: String?
-    var itemName: String?
-    var quantity: Double?
-    var price: Double?
-    var value: Double?
-    var transactionid: Int32?
-    var rabat: Double?
-    var rabat2: Double?
-    var priceMenuID: Int16?
-    var barcode: String?
-    var unitId: Int16?
-    var coefficient: Double?
-}
+
+
 
 
 

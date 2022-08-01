@@ -12,8 +12,8 @@ class EntryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-                PersistenceManager.shared.DeleteUserInSqLite()
-                PersistenceManager.shared.DeleteDepartmentInSqLite()
+//                PersistenceManager.shared.DeleteUserInSqLite()
+//                PersistenceManager.shared.DeleteDepartmentInSqLite()
         //        PersistenceManager.shared.DeleteVisitInSqLite()
         //        PersistenceManager.shared.DeleteTransactionInSqLite()
         //        PersistenceManager.shared.DeleteTransactionDetailsInSqLite()

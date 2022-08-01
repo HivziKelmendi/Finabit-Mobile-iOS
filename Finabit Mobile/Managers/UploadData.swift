@@ -8,84 +8,8 @@
 import Foundation
 import CoreData
 
-struct UploadVisit: Codable {
-    
-    var VisitID: Int
-    var BeginningDate: String?
-    var PartnerID: Int?
-    var EndingDate: String?
-    var IsSynchronized: Bool?
-    var InsBy: Int?
-    var SyncID: Int32?
-    var DepartmentID: Int?
-    var LongitudeBegin: Double?
-    var LongitudeEnd: Double?
-    var LatitudeBegin: Double?
-    var LatitudeEnd: Double?
-    var SetPartnerPosition: Bool?
-    var PartnerPicture: Data?
-    var SetPartnerPicture: Bool?
-    var strPicture: String?
-    var UpdatePartnerCoords: Bool?
-}
 
-struct UploadResponse: Codable {
-    var SyncUploadResult: String?
-}
-
-struct UploadTransactions: Codable {
-    var TransactionNo: String
-    var InvoiceNo: String?
-    var TransactionType: Int32?
-    var TransactionDate: String?
-    var PartnerID: Int32?
-    var VisitID: Int32?
-    var DepartmentID: Int16?
-    var InsDate: String?
-    var InsBy: Int32?
-    var EmployeeID: Int32?
-    var IsSynchronized: Bool?
-    var VATPrecentID: Int32?
-    var DueDays: Int32?
-    var PaymentValue: Double?
-    var AllValue: Double?
-    var Longitude: String?
-    var Latitude: String?
-    var ServiceTypeID: Int32?
-    var AssetID: Int32?
-    var BL: Bool?
-    var Memo: String?
-    var Llogaria_NotaKreditore: String?
-    var Vlera_NotaKreditore: Double?
-    //    var Exists: Bool?
-    var IsPrintFiscalInvoice: Bool?
-    //    var ErrorID: Int?
-    //    var ErrorDescription: String?
-    var IsPriceFromPartner: Bool?
-    var NrIFatBlerje: String?
-    var InternalDepartmentID: Int32?
-}
-
-struct UploadTransactionDetails: Codable {
-    var ItemID: String?
-    var ItemName: String?
-    var Quantity: Double?
-    var Price: Double?
-    var Value: Double?
-    var TransactionID: Int32?
-    var Rabat: Double?
-    //    var SubOrderID: Int?
-    var Rabat2: Double?
-    var Rabat3: Double?
-    //    var Memo: String?
-    var PriceMenuID: Int16?
-    var Barcode: String?
-    //    var AssetID: Int?
-    var UnitID: Int16?
-    var Coefficient: Double?
-}
-
-class UploadOrder: NSObject, XMLParserDelegate {
+class UploadData: NSObject, XMLParserDelegate {
     
     private var uploadResponse: UploadResponse?
     private var currentElement = ""
@@ -321,6 +245,85 @@ class UploadOrder: NSObject, XMLParserDelegate {
     }
     
 }
+
+struct UploadVisit: Codable {
+    
+    var VisitID: Int
+    var BeginningDate: String?
+    var PartnerID: Int?
+    var EndingDate: String?
+    var IsSynchronized: Bool?
+    var InsBy: Int?
+    var SyncID: Int32?
+    var DepartmentID: Int?
+    var LongitudeBegin: Double?
+    var LongitudeEnd: Double?
+    var LatitudeBegin: Double?
+    var LatitudeEnd: Double?
+    var SetPartnerPosition: Bool?
+    var PartnerPicture: Data?
+    var SetPartnerPicture: Bool?
+    var strPicture: String?
+    var UpdatePartnerCoords: Bool?
+}
+
+struct UploadResponse: Codable {
+    var SyncUploadResult: String?
+}
+
+struct UploadTransactions: Codable {
+    var TransactionNo: String
+    var InvoiceNo: String?
+    var TransactionType: Int32?
+    var TransactionDate: String?
+    var PartnerID: Int32?
+    var VisitID: Int32?
+    var DepartmentID: Int16?
+    var InsDate: String?
+    var InsBy: Int32?
+    var EmployeeID: Int32?
+    var IsSynchronized: Bool?
+    var VATPrecentID: Int32?
+    var DueDays: Int32?
+    var PaymentValue: Double?
+    var AllValue: Double?
+    var Longitude: String?
+    var Latitude: String?
+    var ServiceTypeID: Int32?
+    var AssetID: Int32?
+    var BL: Bool?
+    var Memo: String?
+    var Llogaria_NotaKreditore: String?
+    var Vlera_NotaKreditore: Double?
+    //    var Exists: Bool?
+    var IsPrintFiscalInvoice: Bool?
+    //    var ErrorID: Int?
+    //    var ErrorDescription: String?
+    var IsPriceFromPartner: Bool?
+    var NrIFatBlerje: String?
+    var InternalDepartmentID: Int32?
+}
+
+struct UploadTransactionDetails: Codable {
+    var ItemID: String?
+    var ItemName: String?
+    var Quantity: Double?
+    var Price: Double?
+    var Value: Double?
+    var TransactionID: Int32?
+    var Rabat: Double?
+    //    var SubOrderID: Int?
+    var Rabat2: Double?
+    var Rabat3: Double?
+    //    var Memo: String?
+    var PriceMenuID: Int16?
+    var Barcode: String?
+    //    var AssetID: Int?
+    var UnitID: Int16?
+    var Coefficient: Double?
+}
+
+
 
 extension Int {
     var boolValue: Bool { return self != 0 }

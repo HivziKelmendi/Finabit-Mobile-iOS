@@ -3,7 +3,7 @@
 //  Finabit Mobile
 //
 //  Created by Hivzi on 13.2.22.
-//
+// test
 import UIKit
 
 class RegisterVC: UIViewController {
